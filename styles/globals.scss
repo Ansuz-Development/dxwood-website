@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  color: #212529;
+}
+
 .footer {
-  padding: 68px 72px 72px 72px;
+  padding: 4.25rem 4.5rem 4.5rem 4.5rem;
 
   @media (max-width: 768px) {
     @apply p-5;
@@ -15,4 +19,24 @@
       max-width: 100%;
     }
   }
+}
+
+.font-34 {
+  font-size: 34px;
+  line-height: 1.2;
+}
+
+.subject-section {
+  .subject {
+    min-width: calc(100% - 5rem);
+  }
+  // .image {
+  //   width: 400px;
+  //   height: 300px;
+
+  //   img {
+  //     width: 100%;
+  //     height: auto;
+  //   }
+  // }
 }
