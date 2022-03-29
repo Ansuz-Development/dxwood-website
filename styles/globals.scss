@@ -28,6 +28,7 @@ body {
 
 .subject-section {
   .subject {
+    @apply flex flex-col md:flex-row mx-5 md:mx-0;
     min-width: calc(100% - 5rem);
   }
 }

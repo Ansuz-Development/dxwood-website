@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 // https://heymeta.com/
 
-import { getImageLink, SocialNetworks } from "../../helper/constants";
+import { SocialNetworks } from "../../helper/constants";
+import { getImageUrl } from "../../helper/utils";
 const SEOItem = ({ seo }) => {
   if (!seo) return null;
 
@@ -20,14 +21,14 @@ const SEOItem = ({ seo }) => {
       {/* Google / Search Engine Tags  */}
       <meta itemProp="name" content={seo.metaTitle} />
       <meta itemProp="description" content={seo?.description} />
-      <meta itemProp="image" content={getImageLink(seo.metaImage.data?.attributes.url)} />
+      <meta itemProp="image" content={getImageUrl(seo.metaImage)} />
 
       {/* Facebook Meta Tags */}
       {fbMetaData && (
         <>
           <meta property="og:title" content={fbMetaData?.title} />
           <meta property="og:description" content={fbMetaData?.description} />
-          <meta property="og:image" content={getImageLink(fbMetaData.image.data?.attributes.url)} />
+          <meta property="og:image" content={getImageUrl(fbMetaData.image)} />
         </>
       )}
 
@@ -36,10 +37,7 @@ const SEOItem = ({ seo }) => {
         <>
           <meta name="twitter:title" content={twMetaData?.title} />
           <meta name="twitter:description" content={twMetaData?.description} />
-          <meta
-            name="twitter:image"
-            content={getImageLink(twMetaData.image.data?.attributes.url)}
-          />
+          <meta name="twitter:image" content={getImageUrl(twMetaData.image)} />
         </>
       )}
     </Head>
