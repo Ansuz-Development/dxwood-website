@@ -2,9 +2,14 @@ import React from "react";
 
 const list = ["Home", "Về dự án", "Nội dung đào tạo", "Mentor", "Tin tức - Sự kiện", "Contact"];
 
+const banner = {
+  image: "https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
+}
+
 const Navbar = () => (
+  <div>
   <nav
-    className="bg-transparent p-5 rounded border border-dashed border-blue-500"
+    className="bg-transparent p-5 pr-0 rounded border border-dashed border-blue-500"
     style={{
       height: "96px",
     }}
@@ -58,6 +63,12 @@ const Navbar = () => (
         </svg>
       </button>
     </div>
+    
   </nav>
+  <div style={{marginBottom:'50px'}}>
+      <img  style={{width:'91.4%',height:'240px', margin:'0 auto'}} src={banner.image} alt="" />
+    </div>
+  
+  </div>
 );
 export default Navbar;
