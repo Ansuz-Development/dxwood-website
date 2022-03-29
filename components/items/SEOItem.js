@@ -8,10 +8,8 @@ import { getImageLink, SocialNetworks } from "../../helper/constants";
 const SEOItem = ({ seo }) => {
   if (!seo) return null;
 
-  console.log("seo", seo);
-
-  const fbMetaData = seo.metaSocial.find((e) => e.socialNetwork === SocialNetworks.facebook);
-  const twMetaData = seo.metaSocial.find((e) => e.socialNetwork === SocialNetworks.twitter);
+  const fbMetaData = seo?.metaSocial.find((e) => e.socialNetwork === SocialNetworks.facebook);
+  const twMetaData = seo?.metaSocial.find((e) => e.socialNetwork === SocialNetworks.twitter);
 
   return (
     <Head>

@@ -5,11 +5,11 @@ import Image from "next/image";
 import { getImageLink } from "../../helper/constants";
 
 const SubjectItem = ({ item }) => {
-  const url = getImageLink(item.cover.data.attributes.formats.medium);
+  const url = getImageLink(item.cover.data.attributes.formats.medium.url);
   const blurUrl = getImageLink(item.cover.data.attributes.formats.thumbnail.url);
 
   return (
-    <div className="subject flex flex-col md:flex-row mx-5">
+    <div className="subject flex flex-col md:flex-row mx-5 md:mx-0">
       <Image
         alt=""
         className="md:rounded-3xl"
