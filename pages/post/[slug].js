@@ -1,16 +1,15 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { getPostBySlug, getPostSlugs } from "../../lib/api";
 import SEOItem from "../../components/items/SEOItem";
 
 const Post = ({ post }) => {
   return (
-    <div>
+    <>
       <SEOItem seo={post.attributes?.seo} />
       <main>
         <h1>{post.attributes.title}</h1>
       </main>
-    </div>
+    </>
   );
 };
 

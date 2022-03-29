@@ -2,9 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
 
+import { getImageLink } from "../../helper/constants";
+
 const SubjectItem = ({ item }) => {
-  const url = `https://strapi.ansuzdev.com${item.cover.data.attributes.formats.medium.url}`;
-  const blurUrl = `https://strapi.ansuzdev.com${item.cover.data.attributes.formats.thumbnail.url}`;
+  const url = getImageLink(item.cover.data.attributes.formats.medium);
+  const blurUrl = getImageLink(item.cover.data.attributes.formats.thumbnail.url);
 
   return (
     <div className="subject flex flex-col md:flex-row mx-5">
