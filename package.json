@@ -1,5 +1,5 @@
 {
-  "name": "next-boilerplate",
+  "name": "dx_wood",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -26,6 +26,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "postcss": "^8.4.12",
     "prettier": "^2.6.0",
+    "sass": "^1.49.9",
     "tailwindcss": "^3.0.23"
   }
 }

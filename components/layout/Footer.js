@@ -2,14 +2,8 @@ import Link from "next/link";
 import React from "react";
 
 const Footer = () => (
-  <footer
-    style={{
-      height: "20rem",
-      padding: "4.25rem 4.5rem 4.5rem 4.5rem",
-    }}
-    className="bg-black flex justify-between"
-  >
-    <div>
+  <footer className="footer bg-black flex justify-between h-auto md:h-80 flex-col md:flex-row">
+    <div className="left">
       <p className="text-4xl text-white font-bold">Sẵn sàng tham gia dự án?</p>
       <p className="text-white mt-5 mb-10">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
@@ -19,21 +13,21 @@ const Footer = () => (
       </button>
     </div>
 
-    <div className="flex flex-col justify-between">
+    <div className="flex flex-row flex-wrap md:flex-col md:justify-between mt-4 md:mt-0">
       <Link href={"#"} prefetch={false}>
-        <a className="text-white hover:text-pink-200">Navigation</a>
+        <a className="text-white hover:text-pink-200 mr-2">Navigation</a>
       </Link>
       <Link href={"#"} prefetch={false}>
-        <a className="text-white hover:text-pink-200">Email Marketing</a>
+        <a className="text-white hover:text-pink-200 mr-2">Email Marketing</a>
       </Link>
       <Link href={"#"} prefetch={false}>
-        <a className="text-white hover:text-pink-200">Campaigns</a>
+        <a className="text-white hover:text-pink-200 mr-2">Campaigns</a>
       </Link>
       <Link href={"#"} prefetch={false}>
-        <a className="text-white hover:text-pink-200">Branding</a>
+        <a className="text-white hover:text-pink-200 mr-2">Branding</a>
       </Link>
       <Link href={"#"} prefetch={false}>
-        <a className="text-white hover:text-pink-200">Offline</a>
+        <a className="text-white hover:text-pink-200 mr-2">Offline</a>
       </Link>
     </div>
   </footer>

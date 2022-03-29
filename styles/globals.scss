@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.footer {
+  padding: 68px 72px 72px 72px;
+
+  @media (max-width: 768px) {
+    @apply p-5;
+  }
+
+  .left {
+    max-width: 65%;
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
+  }
+}
