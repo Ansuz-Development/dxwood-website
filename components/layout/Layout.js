@@ -19,9 +19,7 @@ const Layout = ({ children }) => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Navbar />
-    <main>
-      <section className="min-h-screen">{children}</section>
-    </main>
+    <main>{children}</main>
     <Footer />
   </>
 );

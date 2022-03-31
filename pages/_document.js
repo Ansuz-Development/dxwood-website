@@ -35,7 +35,7 @@ const MyDocument = () => (
       <link rel="shortcut icon" href="/favicon.ico" />
 
       <link
-        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        href="https://fonts.googleapis.com/css?family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"
       />
     </Head>

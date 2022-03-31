@@ -2,11 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  color: #212529;
+html, body {
+  font-family: 'Inter', sans-serif;
 }
 
-.footer {
+body {
+  @apply text-black text-base overflow-x-hidden;  // 16px
+}
+
+@layer base {
+  h1 {
+    @apply text-8xl font-light;  //  96px - 300
+  }
+  h2 {
+    @apply text-6xl font-semibold;  //  60px - 600
+  }
+  h3 {
+    @apply text-5xl font-semibold;  //  48px - 600
+  }
+  h4 {
+    font-size: 2.125rem;  //  34px
+  }
+  h5 {
+    @apply text-2xl;  //  24px
+  }
+  h6 {
+    @apply text-xl font-semibold;  //  20px - 600
+  }
+
+  .subtitle-1 {
+    @apply text-base; // 16px
+  }
+
+  .subtitle-2 {
+    @apply text-sm; // 14px
+  }
+
+  .body-1 {
+    @apply text-base; // 16px
+  }
+
+  .body-2 {
+    @apply text-sm; // 14px
+  }
+
+  button {
+    @apply text-sm font-semibold; // 14px - 600
+  }
+
+  caption {
+    @apply text-xs; // 12px
+  }
+
+  .overline {
+    font-size: 0.625rem; // 10px
+  }
+}
+
+footer {
   padding: 4.25rem 4.5rem 4.5rem 4.5rem;
 
   @media (max-width: 768px) {
@@ -19,11 +72,6 @@ body {
       max-width: 100%;
     }
   }
-}
-
-.font-34 {
-  font-size: 34px;
-  line-height: 1.2;
 }
 
 .subject-section {

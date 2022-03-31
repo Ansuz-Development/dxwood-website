@@ -6,12 +6,7 @@ const AboutSection = ({ data }) => {
 
   return (
     <div style={{ marginBottom: "50px" }}>
-      <h2
-        className="font-bold text-center"
-        style={{ color: "#212529", fontSize: "34px", marginBottom: "23px" }}
-      >
-        {title}
-      </h2>
+      <h2 className="text-center">{title}</h2>
       <p style={{ margin: "0 auto 15px", width: "850px" }} className=",font-normal text-base">
         {description}
       </p>

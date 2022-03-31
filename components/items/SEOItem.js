@@ -9,8 +9,8 @@ import { getImageUrl } from "../../helper/utils";
 const SEOItem = ({ seo }) => {
   if (!seo) return null;
 
-  const fbMetaData = seo?.metaSocial.find((e) => e.socialNetwork === SocialNetworks.facebook);
-  const twMetaData = seo?.metaSocial.find((e) => e.socialNetwork === SocialNetworks.twitter);
+  const fbMetaData = seo?.metaSocial?.find((e) => e.socialNetwork === SocialNetworks.facebook);
+  const twMetaData = seo?.metaSocial?.find((e) => e.socialNetwork === SocialNetworks.twitter);
 
   return (
     <Head>

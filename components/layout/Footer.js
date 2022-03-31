@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 const Footer = () => (
-  <footer className="footer bg-black flex justify-between h-auto md:h-80 flex-col md:flex-row">
+  <footer className="bg-primary-500 flex justify-between h-auto md:h-80 flex-col md:flex-row">
     <div className="left">
       <p className="text-4xl text-white font-bold">Sẵn sàng tham gia dự án?</p>
       <p className="text-white mt-5 mb-10">
