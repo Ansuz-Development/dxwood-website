@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 
-import BenefitItem from "../items/BenefitItem";
+import BenefitItem, { BenefitItemProps } from "../items/BenefitItem";
 
 // import Swiper styles
 const BenefitSection = ({ data }) => {
@@ -34,10 +34,10 @@ const BenefitSection = ({ data }) => {
 };
 
 BenefitSection.propTypes = {
-  data: PropTypes.objectOf({
+  data: PropTypes.shape({
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    benefits: PropTypes.array.isRequired,
+    benefits: PropTypes.arrayOf(BenefitItemProps).isRequired,
   }),
 };
 

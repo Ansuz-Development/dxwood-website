@@ -15,12 +15,14 @@ const BenefitItem = ({ item }) => {
   );
 };
 
+export const BenefitItemProps = PropTypes.shape({
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  icon: PropTypes.object.isRequired,
+});
+
 BenefitItem.propTypes = {
-  item: PropTypes.objectOf({
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    icon: PropTypes.object.isRequired,
-  }).isRequired,
+  item: BenefitItemProps.isRequired,
 };
 
 export default BenefitItem;

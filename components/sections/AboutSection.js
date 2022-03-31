@@ -34,13 +34,11 @@ const AboutSection = ({ data }) => {
 };
 
 AboutSection.propTypes = {
-  data: PropTypes.objectOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      cover: PropTypes.string.isRequired,
-    }),
-  ),
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    cover: PropTypes.object.isRequired,
+  }),
 };
 
 export default AboutSection;
