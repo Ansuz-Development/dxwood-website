@@ -11,7 +11,7 @@ const Home = ({ homepage, options }) => {
   return (
     <>
       <SEOItem seo={homepage.attributes?.seo} />
-      <div className="relative h-96">
+      <div className="relative h-32 md:h-96">
         <Image
           src={bannerBackground}
           alt="DXWood"
