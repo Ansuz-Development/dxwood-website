@@ -2,32 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+html,
+body {
   font-family: 'Inter', sans-serif;
 }
 
 body {
-  @apply text-black text-base overflow-x-hidden;  // 16px
+  @apply text-black text-base overflow-x-hidden; // 16px
 }
 
 @layer base {
   h1 {
-    @apply text-8xl font-light;  //  96px - 300
+    @apply text-8xl font-light; //  96px - 300
   }
+
   h2 {
-    @apply text-6xl font-semibold;  //  60px - 600
+    @apply text-6xl font-semibold; //  60px - 600
   }
+
   h3 {
-    @apply text-5xl font-semibold;  //  48px - 600
+    @apply text-5xl font-semibold; //  48px - 600
   }
+
   h4 {
-    font-size: 2.125rem;  //  34px
+    font-size: 2.125rem; //  34px
   }
+
   h5 {
-    @apply text-2xl;  //  24px
+    @apply text-2xl; //  24px
   }
+
   h6 {
-    @apply text-xl font-semibold;  //  20px - 600
+    @apply text-xl font-semibold; //  20px - 600
   }
 
   .subtitle-1 {
@@ -60,16 +66,37 @@ body {
 }
 
 footer {
-  padding: 4.25rem 4.5rem 4.5rem 4.5rem;
+  @apply bg-primary-500;
+  height: 302px;
 
-  @media (max-width: 768px) {
-    @apply p-5;
-  }
+  .container {
+    // mobile
+    // @apply flex flex-col justify-between;
 
-  .left {
-    max-width: 65%;
-    @media (max-width: 768px) {
-      max-width: 100%;
+    @apply py-12 h-full;
+    @apply flex flex-col;
+
+    @media (min-width: theme("screens.sm")) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    @media (min-width: theme("screens.md")) {
+      @apply flex flex-row;
+    }
+
+    .left {
+      @apply w-full;
+
+      .button {
+        @apply bg-white py-3.5 px-2.5 h-12 font-bold rounded-sm;
+        @apply text-primary-500 text-sm leading-snug;
+        width: 180px;
+      }
+
+      @media (min-width: theme("screens.md")) {
+        @apply w-2/3;
+      }
     }
   }
 }
@@ -80,7 +107,12 @@ section {
 
 .subject-section {
   .subject {
-    @apply flex flex-col md:flex-row mx-5 md:mx-0;
+    @apply flex flex-col mx-5;
+
+    @screen md {
+      @apply flex-row mx-0
+    }
+
     min-width: calc(100% - 5rem);
   }
 }
