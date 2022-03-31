@@ -5,6 +5,9 @@ import renderSection from "../components/sections";
 
 import { getHomepage, getPosts } from "../lib/api";
 
+import "swiper/css";
+import "swiper/css/navigation";
+
 import bannerBackground from "../assests/hero-bg.jpg";
 
 const Home = ({ homepage, options }) => {

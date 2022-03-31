@@ -7,7 +7,7 @@ const BenefitItem = ({ item }) => {
   const iconUrl = getImageUrl(item.icon);
 
   return (
-    <div className="flex flex-col justify-center text-center p-6 space-y-4">
+    <div className="benefit-item">
       <Image src={iconUrl} width={40} height={40} alt={item.title} />
       <h5>{item.title}</h5>
       <p className="body-2">{item.description}</p>

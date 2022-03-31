@@ -6,10 +6,6 @@ import { Pagination, Navigation } from "swiper";
 import BenefitItem from "../items/BenefitItem";
 
 // import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
 const BenefitSection = ({ data }) => {
   const { title, description, benefits } = data;
   return (
@@ -24,7 +20,7 @@ const BenefitSection = ({ data }) => {
           spaceBetween={24}
           navigation={true}
           modules={[Pagination, Navigation]}
-          className="mySwiper"
+          className="custom-swiper"
         >
           {benefits.map((benefit) => (
             <SwiperSlide key={benefit.title}>
