@@ -74,9 +74,18 @@ footer {
   }
 }
 
+section {
+  @apply py-12;
+}
+
 .subject-section {
   .subject {
     @apply flex flex-col md:flex-row mx-5 md:mx-0;
     min-width: calc(100% - 5rem);
   }
+}
+
+.image-16x9 {
+  @apply relative;
+  padding-top: 56.25%;
 }

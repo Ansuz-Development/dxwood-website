@@ -5,12 +5,12 @@ module.exports = {
       sm: "640px",
       md: "768px",
       lg: "1024px",
-      xl: "1280px",
-      "2xl": "1440px",
+      xl: "1248px",
+      "2xl": "1248px",
       tablet: "640px",
       laptop: "1024px",
-      desktop: "1280px",
-      fullhd: "1440px",
+      desktop: "1248px",
+      fullhd: "1248px",
     },
     container: {
       center: true,
@@ -55,7 +55,15 @@ module.exports = {
       divider: "#DADADA",
       error: "#B3261E",
     },
-    extend: {},
+    extend: {
+      spacing: {
+        176: "44rem",
+        204: "51rem",
+      },
+      maxWidth: {
+        "2/3": "66.77%",
+      },
+    },
   },
   plugins: [require("tailwind-scrollbar-hide")],
 };

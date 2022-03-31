@@ -1,20 +1,35 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import Image from "next/image";
+
+import { getImageUrl, getFormattedImage } from "../../helper/utils";
+
 const AboutSection = ({ data }) => {
-  const { title, description, image } = data;
+  const { title, description, cover } = data;
+
+  const url = getImageUrl(cover);
+  const blurUrl = getFormattedImage(cover, "thumbnail");
 
   return (
-    <div style={{ marginBottom: "50px" }}>
-      <h2 className="text-center">{title}</h2>
-      <p style={{ margin: "0 auto 15px", width: "850px" }} className=",font-normal text-base">
-        {description}
-      </p>
-      <img
-        style={{ borderRadius: "15px", width: "1116px", height: "627px", margin: "0 auto" }}
-        src={image}
-      />
-    </div>
+    <section>
+      <div className="space-y-16">
+        <div className="text-center max-w-2/3 space-y-4 mx-auto">
+          <h4>{title}</h4>
+          <p>{description}</p>
+        </div>
+        <div className="image-16x9">
+          <Image
+            alt={title}
+            src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${url}`}
+            placeholder="blur"
+            blurDataURL={blurUrl}
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
+      </div>
+    </section>
   );
 };
 
