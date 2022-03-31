@@ -12,11 +12,7 @@ const SubjectSection = ({ data }) => {
     <div className="subject-section">
       <p className="font-34 font-bold mb-6 text-center">{data.title}</p>
       <p className="text-center mb-4">{data.description}</p>
-      <div
-        ref={ref}
-        onMouseDown={onMouseDown}
-        className="flex overflow-x-auto scrollbar-hide ml-0 md:ml-20"
-      >
+      <div ref={ref} onMouseDown={onMouseDown} className="flex ml-0 md:ml-20">
         {data.subjects.map((subject) => (
           <SubjectItem key={subject.heading} item={subject} />
         ))}
