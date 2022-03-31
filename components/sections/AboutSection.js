@@ -38,7 +38,7 @@ AboutSection.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
+      cover: PropTypes.string.isRequired,
     }),
   ),
 };

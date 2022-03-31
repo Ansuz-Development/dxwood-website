@@ -24,7 +24,7 @@ body {
     font-size: 2.125rem;  //  34px
   }
   h5 {
-    @apply text-2xl;  //  24px
+    @apply text-2xl font-semibold;  //  24px - 600
   }
   h6 {
     @apply text-xl font-semibold;  //  20px - 600
