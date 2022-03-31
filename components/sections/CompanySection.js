@@ -9,7 +9,7 @@ const CompanySection = ({ data }) => {
   const { title, description, companies } = data;
 
   return (
-    <section>
+    <section id="companies">
       <div className="space-y-6 md:space-y-10">
         <div className="text-center w-full md:max-w-2/3 space-y-4 mx-auto">
           <h4>{title}</h4>

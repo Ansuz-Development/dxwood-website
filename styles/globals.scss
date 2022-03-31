@@ -134,6 +134,18 @@ section {
   }
 }
 
+.navbar-item {
+  @apply relative body-1;
+
+  &.active {
+    @apply text-primary-500;
+
+    &::after {
+      content: " ";
+      @apply absolute left-0 -bottom-2 h-0.5 w-full bg-primary-500;
+    }
+  }
+}
 
 .benefit-item {
   @apply flex flex-col items-center text-center h-full p-6 space-y-4 bg-white rounded-sm;
