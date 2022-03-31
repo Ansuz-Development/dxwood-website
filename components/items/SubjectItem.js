@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
 
-import { getImageLinkWithFormat } from "../../helper/utils";
+import { getFormattedImage } from "../../helper/utils";
 
 const SubjectItem = ({ item }) => {
-  const url = getImageLinkWithFormat(item, "medium");
-  const blurUrl = getImageLinkWithFormat(item, "thumbnail");
+  const url = getFormattedImage(item.cover, "medium");
+  const blurUrl = getFormattedImage(item.cover, "thumbnail");
 
   return (
     <div className="subject">
