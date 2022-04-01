@@ -1,28 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link, scrollSpy } from "react-scroll";
 
-const list = ["Home", "Về dự án", "Nội dung đào tạo", "Mentor", "Tin tức - Sự kiện", "Contact"];
+const menuList = [
+  { id: "home", label: "Trang chủ" },
+  { id: "about", label: "Về dự án" },
+  { id: "subjects", label: "Nội dung đào tạo" },
+  { id: "mentors", label: "Mentor" },
+  { id: "news", label: "Tin tức - Sự kiện" },
+  { id: "contact", label: "Liên hệ" },
+];
 
-const Navbar = () => (
-  <div>
-    <nav
-      className="bg-transparent p-5 pr-0 rounded border border-dashed border-blue-500"
-      style={{
-        height: "96px",
-      }}
-    >
-      <div className="bg-gray-100 h-full hidden md:block">
-        <div className="container mx-auto h-full flex-1">
-          <ul className="flex flex-row items-center justify-evenly h-full">
-            {list.map((e) => (
-              <li key={e}>
-                <a href="#" className="block text-gray-700  hover:text-blue-700">
-                  {e}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+const Navbar = () => {
+  useEffect(() => {
+    scrollSpy.update();
+  }, []);
+
+  return (
+    <nav className="sticky top-0 z-50 flex items-center justify-center bg-white h-20">
+      <ul className="flex space-x-6">
+        {menuList.map((item) => (
+          <li key={item}>
+            <Link
+              className="navbar-item"
+              activeClass="active"
+              to={item.id}
+              spy={true}
+              smooth={true}
+              offset={-80}
+              duration={500}
+              delay={200}
+            >
+              {item.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
 
       <div className="md:hidden">
         <button
@@ -60,6 +72,6 @@ const Navbar = () => (
         </button>
       </div>
     </nav>
-  </div>
-);
+  );
+};
 export default Navbar;

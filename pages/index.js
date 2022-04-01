@@ -5,13 +5,16 @@ import renderSection from "../components/sections";
 
 import { getHomepage, getPosts } from "../lib/api";
 
+import "swiper/css";
+import "swiper/css/navigation";
+
 import bannerBackground from "../assests/hero-bg.jpg";
 
 const Home = ({ homepage, options }) => {
   return (
     <>
       <SEOItem seo={homepage.attributes?.seo} />
-      <div className="relative h-96">
+      <div id="home" className="relative h-32 md:h-96">
         <Image
           src={bannerBackground}
           alt="DXWood"

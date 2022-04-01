@@ -29,7 +29,7 @@ body {
   }
 
   h5 {
-    @apply text-2xl; //  24px
+    @apply text-2xl font-semibold;  //  24px - 600
   }
 
   h6 {
@@ -102,7 +102,7 @@ footer {
 }
 
 section {
-  @apply py-12;
+  @apply py-6 md:py-12;
 }
 
 .subject-section {
@@ -120,4 +120,69 @@ section {
 .image-16x9 {
   @apply relative;
   padding-top: 56.25%;
+}
+
+.custom-swiper {
+  @apply px-5 py-2 #{!important};
+
+  .swiper-slide {
+    @apply h-auto;
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+    @apply opacity-80 hover:opacity-100;
+    @apply w-10 h-10 bg-primary-500 rounded-full;
+
+    &::before {
+      content: " ";
+      @apply w-10 h-10 bg-no-repeat bg-center;
+    }
+
+    &::after {
+      content: unset !important;
+    }
+
+    &.swiper-button-disabled {
+      @apply opacity-0;
+    }
+  }
+
+  .swiper-button-prev {
+    @apply left-0;
+
+    &::before {
+      font-family: unset !important;
+      font-size: 0 !important;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMy42NDY0NSAxMS42NDY0QzMuNDUxMTkgMTEuODQxNyAzLjQ1MTE5IDEyLjE1ODMgMy42NDY0NSAxMi4zNTM2TDYuODI4NDMgMTUuNTM1NUM3LjAyMzY5IDE1LjczMDggNy4zNDAyNyAxNS43MzA4IDcuNTM1NTMgMTUuNTM1NUM3LjczMDggMTUuMzQwMyA3LjczMDggMTUuMDIzNyA3LjUzNTUzIDE0LjgyODRMNC43MDcxMSAxMkw3LjUzNTUzIDkuMTcxNTdDNy43MzA4IDguOTc2MzEgNy43MzA4IDguNjU5NzMgNy41MzU1MyA4LjQ2NDQ3QzcuMzQwMjcgOC4yNjkyIDcuMDIzNjkgOC4yNjkyIDYuODI4NDMgOC40NjQ0N0wzLjY0NjQ1IDExLjY0NjRaTTIwIDExLjVMNCAxMS41VjEyLjVMMjAgMTIuNVYxMS41WiIgZmlsbD0iI0ZGRkZGRiIvPjwvc3ZnPgo=") !important;
+    }
+  }
+
+  .swiper-button-next {
+    @apply right-0;
+
+    &::before {
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMjAuMzUzNiAxMi4zNTM2QzIwLjU0ODggMTIuMTU4MyAyMC41NDg4IDExLjg0MTcgMjAuMzUzNiAxMS42NDY0TDE3LjE3MTYgOC40NjQ0N0MxNi45NzYzIDguMjY5MiAxNi42NTk3IDguMjY5MiAxNi40NjQ1IDguNDY0NDdDMTYuMjY5MiA4LjY1OTczIDE2LjI2OTIgOC45NzYzMSAxNi40NjQ1IDkuMTcxNTdMMTkuMjkyOSAxMkwxNi40NjQ1IDE0LjgyODRDMTYuMjY5MiAxNS4wMjM3IDE2LjI2OTIgMTUuMzQwMyAxNi40NjQ1IDE1LjUzNTVDMTYuNjU5NyAxNS43MzA4IDE2Ljk3NjMgMTUuNzMwOCAxNy4xNzE2IDE1LjUzNTVMMjAuMzUzNiAxMi4zNTM2Wk00IDEyLjVIMjBWMTEuNUg0VjEyLjVaIiBmaWxsPSIjRkZGRkZGIi8+PC9zdmc+Cg==") !important;
+    }
+  }
+}
+
+.navbar-item {
+  @apply relative body-1;
+
+  &.active {
+    @apply text-primary-500;
+
+    &::after {
+      content: " ";
+      @apply absolute left-0 -bottom-2 h-0.5 w-full bg-primary-500;
+    }
+  }
+}
+
+.benefit-item {
+  @apply flex flex-col items-center text-center h-full p-6 space-y-4 bg-white rounded-sm;
+
+  &:hover {
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);
+  }
 }
