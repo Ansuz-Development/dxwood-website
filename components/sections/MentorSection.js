@@ -2,11 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Grid } from "swiper";
+import { Navigation, Grid, Pagination } from "swiper";
 import MentorItem from "../items/MentorItem";
+
+import useMobileDetect from "../../helper/useMobileDetect";
 
 const MentorSection = ({ data }) => {
   const { title, mentors } = data;
+
+  const { isMobile } = useMobileDetect();
 
   return (
     <section id="mentors">
@@ -16,13 +20,13 @@ const MentorSection = ({ data }) => {
         </div>
 
         <Swiper
-          slidesPerView={2}
+          slidesPerView={isMobile() ? 1 : 2}
           grid={{
-            rows: 2,
+            rows: isMobile() ? 1 : 2,
           }}
           spaceBetween={24}
           navigation={true}
-          modules={[Grid, Navigation]}
+          modules={isMobile() ? [Pagination] : [Grid, Navigation]}
           className="custom-swiper"
         >
           {mentors.map((mentor) => (

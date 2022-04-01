@@ -208,6 +208,10 @@ section {
 }
 
 #subjects {
+  .swiper-slide-active {
+    width: calc(100% - 80px);
+  }
+
   .subject-item {
     @apply flex flex-col lg:flex-row;
 
@@ -218,7 +222,7 @@ section {
     }
 
     .content {
-      @apply p-6;
+      @apply p-6 mr-6 space-y-4;
       width: calc(100% - 500px);
     }
   }
@@ -234,7 +238,7 @@ section {
   }
 
   .mentor-item {
-    @apply p-5 bg-white h-full rounded;
+    @apply p-5 bg-white h-full rounded space-x-4;
     @apply flex flex-row;
     min-height: 196px;
 
@@ -246,11 +250,10 @@ section {
 
 .news-item {
   @apply flex flex-col;
-  @apply space-y-4;
+  @apply space-y-6;
 
   .image {
     @apply relative;
-    width: 400px !important;
     height: 300px;
   }
 

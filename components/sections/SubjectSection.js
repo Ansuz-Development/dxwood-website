@@ -14,11 +14,11 @@ const SubjectSection = ({ data }) => {
       <div className="space-y-6 md:space-y-10">
         <div className="text-center w-full md:max-w-2/3 space-y-4 mx-auto">
           <h4>{title}</h4>
-          <p className="mt-4">{description}</p>
+          {description && <p>{description}</p>}
         </div>
 
         <Swiper
-          slidesPerView={1}
+          slidesPerView="auto"
           navigation={true}
           modules={[Pagination, Navigation]}
           className="custom-swiper"

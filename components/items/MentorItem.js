@@ -9,7 +9,7 @@ const MentorItem = ({ item }) => {
 
   return (
     <div className="mentor-item">
-      <div className="w-20 h-20">
+      <div className="w-20 h-20 ">
         {item.avatar.data && (
           <Image
             alt="Mentor image"
@@ -23,10 +23,10 @@ const MentorItem = ({ item }) => {
           />
         )}
       </div>
-      <div className="md:ml-4 mt-3 md:mt-0 w-full">
+      <div className="md:ml-4 md:mt-0 w-full">
         <h5>{item.name}</h5>
         <p className="body-1 mt-1">{item.title}</p>
-        <p className="body-2 text-justify overflow-ellipsis mt-4">{item.description}</p>
+        <p className="body-2 overflow-ellipsis mt-4">{item.description}</p>
       </div>
     </div>
   );
