@@ -234,7 +234,7 @@ section {
   }
 
   .mentor-item {
-    @apply p-5 bg-white h-full rounded;
+    @apply p-5 bg-white h-full rounded space-x-4;
     @apply flex flex-row;
     min-height: 196px;
 
@@ -246,11 +246,10 @@ section {
 
 .news-item {
   @apply flex flex-col;
-  @apply space-y-4;
+  @apply space-y-6;
 
   .image {
     @apply relative;
-    width: 400px !important;
     height: 300px;
   }
 
