@@ -19,7 +19,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 flex items-center justify-center bg-white h-20">
       <ul className="flex space-x-6">
         {menuList.map((item) => (
-          <li key={item}>
+          <li key={item.id}>
             <Link
               className="navbar-item"
               activeClass="active"
