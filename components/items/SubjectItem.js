@@ -24,7 +24,9 @@ const SubjectItem = ({ item }) => {
         )}
       </div>
       <div className="content">
-        <h5 className="text-primary-500">{item.heading}</h5>
+        <h5 className="text-primary-500 uppercase">
+          {item.heading}: {item.title}
+        </h5>
         <p className="body-1">{item.description}</p>
       </div>
     </div>
