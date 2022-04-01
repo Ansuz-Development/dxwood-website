@@ -53,7 +53,7 @@ body {
     @apply text-sm; // 14px
   }
 
-  button {
+  .button {
     @apply text-sm font-semibold; // 14px - 600
   }
 
@@ -157,7 +157,7 @@ section {
 }
 
 .navbar-item {
-  @apply relative body-1;
+  @apply relative body-1 cursor-pointer hover:text-primary-500;
 
   &.active {
     @apply text-primary-500;
@@ -241,5 +241,20 @@ section {
     &:hover {
       box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);
     }
+  }
+}
+
+.news-item {
+  @apply flex flex-col;
+  @apply space-y-4;
+
+  .image {
+    @apply relative;
+    width: 400px !important;
+    height: 300px;
+  }
+
+  .content {
+    @apply space-y-2;
   }
 }
