@@ -4,9 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 
 import NewsItem from "../items/news/NewsItem";
+import useMobileDetect from "../../helper/useMobileDetect";
 
 const EventSection = ({ data }) => {
   const { title, description, posts } = data;
+
+  const { isMobile } = useMobileDetect();
 
   return (
     <section id="news">
@@ -16,7 +19,7 @@ const EventSection = ({ data }) => {
           {description && <p>{description}</p>}
         </div>
         <Swiper
-          slidesPerView={3}
+          slidesPerView={isMobile() ? 1 : 3}
           spaceBetween={24}
           navigation={true}
           modules={[Pagination, Navigation]}

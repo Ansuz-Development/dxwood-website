@@ -26,7 +26,7 @@ const MentorSection = ({ data }) => {
           }}
           spaceBetween={24}
           navigation={true}
-          modules={isMobile() ? [Pagination] : [Grid, Navigation]}
+          modules={[Grid, Pagination, Navigation]}
           className="custom-swiper"
         >
           {mentors.map((mentor) => (

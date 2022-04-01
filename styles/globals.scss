@@ -209,7 +209,7 @@ section {
 
 #subjects {
   .swiper-slide-active {
-    width: calc(100% - 80px);
+    @apply md:w-less80
   }
 
   .subject-item {
@@ -222,8 +222,8 @@ section {
     }
 
     .content {
-      @apply p-6 mr-6 space-y-4;
-      width: calc(100% - 500px);
+      @apply p-6 space-y-4 w-full;
+      @apply w-full md:w-less500;
     }
   }
 }

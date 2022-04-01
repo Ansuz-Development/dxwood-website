@@ -60,6 +60,8 @@ module.exports = {
         70: "17.5rem",
         176: "44rem",
         204: "51rem",
+        less80: "calc(100% - 80px)",
+        less500: "calc(100% - 500px)",
       },
       maxWidth: {
         "2/3": "66.77%",
