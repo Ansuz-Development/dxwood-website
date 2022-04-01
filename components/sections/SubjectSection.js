@@ -18,7 +18,7 @@ const SubjectSection = ({ data }) => {
         </div>
 
         <Swiper
-          slidesPerView={1}
+          slidesPerView="auto"
           navigation={true}
           modules={[Pagination, Navigation]}
           className="custom-swiper"

@@ -208,6 +208,10 @@ section {
 }
 
 #subjects {
+  .swiper-slide-active {
+    width: calc(100% - 80px);
+  }
+
   .subject-item {
     @apply flex flex-col lg:flex-row;
 
@@ -218,7 +222,7 @@ section {
     }
 
     .content {
-      @apply p-6;
+      @apply p-6 mr-6 space-y-4;
       width: calc(100% - 500px);
     }
   }
