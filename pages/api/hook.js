@@ -40,7 +40,7 @@ export default async function handler(req, res) {
           res.unstable_revalidate("/"),
           async () => {
             if (hook.model === "post") {
-              await res.unstable_revalidate(`/post/${hook.entry.slug}`);
+              await res.unstable_revalidate(`/news/${hook.entry.slug}`);
             }
           },
         ]);

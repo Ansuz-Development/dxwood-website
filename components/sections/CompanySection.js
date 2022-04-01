@@ -4,19 +4,21 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
 
 import CompanyItem, { CompanyItemProps } from "../items/CompanyItem";
+import useMobileDetect from "../../helper/useMobileDetect";
 
 const CompanySection = ({ data }) => {
   const { title, description, companies } = data;
+  const { isMobile } = useMobileDetect();
 
   return (
     <section id="companies">
       <div className="space-y-6 md:space-y-10">
         <div className="text-center w-full md:max-w-2/3 space-y-4 mx-auto">
           <h4>{title}</h4>
-          <p>{description}</p>
+          {description && <p>{description}</p>}
         </div>
         <Swiper
-          slidesPerView={4}
+          slidesPerView={isMobile() ? 1 : 4}
           spaceBetween={24}
           navigation={true}
           loop={true}

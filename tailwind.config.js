@@ -57,11 +57,18 @@ module.exports = {
     },
     extend: {
       spacing: {
+        70: "17.5rem",
         176: "44rem",
         204: "51rem",
       },
       maxWidth: {
         "2/3": "66.77%",
+      },
+      fontSize: {
+        "4xl": ["2.125rem", "1.35"],
+      },
+      boxShadow: {
+        DEFAULT: "0px 1px 8px rgba(0, 0, 0, 0.25)",
       },
     },
   },
