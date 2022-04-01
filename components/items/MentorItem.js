@@ -4,7 +4,6 @@ import Image from "next/image";
 import { getFormattedImage } from "../../helper/utils";
 
 const MentorItem = ({ item }) => {
-  console.log("item", item);
   const url = getFormattedImage(item.avatar, "small");
   const blurUrl = getFormattedImage(item.avatar, "thumbnail");
 
@@ -25,7 +24,7 @@ const MentorItem = ({ item }) => {
         )}
       </div>
       <div className="md:ml-4 mt-3 md:mt-0 w-full">
-        <h5>{item.title}</h5>
+        <h5>{item.name}</h5>
         <p className="body-1 mt-1">{item.title}</p>
         <p className="body-2 text-justify overflow-ellipsis mt-4">{item.description}</p>
       </div>
@@ -35,6 +34,18 @@ const MentorItem = ({ item }) => {
 
 MentorItem.propTypes = {
   item: PropTypes.shape({
+    avatar: PropTypes.shape({
+      attributes: PropTypes.shape({
+        formats: PropTypes.shape({
+          medium: PropTypes.shape({
+            url: PropTypes.string,
+          }),
+          thumbnail: PropTypes.shape({
+            url: PropTypes.string,
+          }),
+        }),
+      }),
+    }),
     cover: PropTypes.shape({
       data: PropTypes.shape({
         attributes: PropTypes.shape({
@@ -50,6 +61,7 @@ MentorItem.propTypes = {
       }),
     }),
     description: PropTypes.string,
+    name: PropTypes.string,
     title: PropTypes.string,
   }),
 };

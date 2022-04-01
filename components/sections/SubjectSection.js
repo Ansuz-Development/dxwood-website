@@ -1,23 +1,36 @@
+import React from "react";
+
 import PropTypes from "prop-types";
-import React, { useRef } from "react";
-import useDraggableScroll from "use-draggable-scroll";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper";
+
 import SubjectItem from "../items/SubjectItem";
 
 const SubjectSection = ({ data }) => {
-  const ref = useRef(null);
-
-  const { onMouseDown } = useDraggableScroll(ref, { direction: "horizontal" });
+  const { title, description, subjects } = data;
 
   return (
-    <div className="subject-section">
-      <p className="font-34 font-bold mb-6 text-center">{data.title}</p>
-      <p className="text-center mb-4">{data.description}</p>
-      <div ref={ref} onMouseDown={onMouseDown} className="flex ml-0 md:ml-20">
-        {data.subjects.map((subject) => (
-          <SubjectItem key={subject.heading} item={subject} />
-        ))}
+    <section id="subjects">
+      <div className="space-y-6 md:space-y-10">
+        <div className="text-center w-full md:max-w-2/3 space-y-4 mx-auto">
+          <h4>{title}</h4>
+          <p className="mt-4">{description}</p>
+        </div>
+
+        <Swiper
+          slidesPerView={1}
+          navigation={true}
+          modules={[Pagination, Navigation]}
+          className="custom-swiper"
+        >
+          {subjects.map((subject) => (
+            <SwiperSlide key={subject.title}>
+              <SubjectItem item={subject} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-    </div>
+    </section>
   );
 };
 

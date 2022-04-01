@@ -4,7 +4,7 @@
 
 html,
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 body {
@@ -105,18 +105,6 @@ section {
   @apply py-6 md:py-12;
 }
 
-.subject-section {
-  .subject {
-    @apply flex flex-col mx-5;
-
-    @screen md {
-      @apply flex-row mx-0
-    }
-
-    min-width: calc(100% - 5rem);
-  }
-}
-
 .image-16x9 {
   @apply relative;
   padding-top: 56.25%;
@@ -129,7 +117,8 @@ section {
     @apply h-auto;
   }
 
-  .swiper-button-next, .swiper-button-prev {
+  .swiper-button-next,
+  .swiper-button-prev {
     @apply opacity-80 hover:opacity-100;
     @apply w-10 h-10 bg-primary-500 rounded-full;
 
@@ -184,6 +173,23 @@ section {
 
   &:hover {
     box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);
+  }
+}
+
+#subjects {
+  .subject-item {
+    @apply flex flex-col lg:flex-row;
+
+    .image {
+      @apply relative;
+      width: 500px !important;
+      height: 375px;
+    }
+
+    .content {
+      @apply p-6;
+      width: calc(100% - 500px);
+    }
   }
 }
 

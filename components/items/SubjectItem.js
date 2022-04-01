@@ -9,23 +9,23 @@ const SubjectItem = ({ item }) => {
   const blurUrl = getFormattedImage(item.cover, "thumbnail");
 
   return (
-    <div className="subject">
-      {item.cover.data && (
-        <Image
-          alt=""
-          className="md:rounded-3xl"
-          src={url}
-          draggable={false}
-          placeholder="blur"
-          blurDataURL={blurUrl}
-          height={300}
-          width={400}
-        />
-      )}
-      <div className="md:ml-4 mt-3 md:mt-0 w-full">
-        <p className="text-2xl font-bold">{item.heading}</p>
-        <p className="text-2xl font-bold mb-2">{item.title}</p>
-        <p>{item.description}</p>
+    <div className="subject-item">
+      <div className="image">
+        {item.cover.data && (
+          <Image
+            alt="Subject image"
+            src={url}
+            draggable={false}
+            placeholder="blur"
+            blurDataURL={blurUrl}
+            layout="fill"
+            objectFit="cover"
+          />
+        )}
+      </div>
+      <div className="content">
+        <h5 className="text-primary-500">{item.heading}</h5>
+        <p className="body-1 mt-4 text-justify">{item.description}</p>
       </div>
     </div>
   );
@@ -47,9 +47,9 @@ SubjectItem.propTypes = {
         }),
       }),
     }),
-    description: PropTypes.any,
-    heading: PropTypes.any,
-    title: PropTypes.any,
+    heading: PropTypes.string,
+    description: PropTypes.string,
+    title: PropTypes.string,
   }),
 };
 
