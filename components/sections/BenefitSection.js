@@ -4,10 +4,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 
 import BenefitItem, { BenefitItemProps } from "../items/BenefitItem";
+import useMobileDetect from "../../helper/useMobileDetect";
 
 // import Swiper styles
 const BenefitSection = ({ data }) => {
   const { title, description, benefits } = data;
+  const { isMobile } = useMobileDetect();
+
   return (
     <section id="benefits">
       <div className="space-y-6 md:space-y-10">
@@ -16,7 +19,7 @@ const BenefitSection = ({ data }) => {
           <p>{description}</p>
         </div>
         <Swiper
-          slidesPerView={4}
+          slidesPerView={isMobile() ? 1 : 4}
           spaceBetween={24}
           navigation={true}
           modules={[Pagination, Navigation]}

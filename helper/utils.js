@@ -9,3 +9,7 @@ export const getFormattedImage = (obj, type, withDomain = true) => {
 
   return withDomain ? `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${url}` : url;
 };
+
+export const fixContent = (content) => {
+  return content.replace('src="/uploads', `src="${process.env.NEXT_PUBLIC_STRAPI_API_URL}/uploads`);
+};
