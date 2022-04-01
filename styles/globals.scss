@@ -67,36 +67,34 @@ body {
 }
 
 footer {
-  @apply bg-primary-500;
-  height: 302px;
+  @apply bg-primary-500 text-white;
 
   .container {
-    // mobile
-    // @apply flex flex-col justify-between;
-
-    @apply py-12 h-full;
+    @apply space-y-6 py-6;
     @apply flex flex-col;
-
-    @media (min-width: theme("screens.sm")) {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-
-    @media (min-width: theme("screens.md")) {
-      @apply flex flex-row;
-    }
+    @apply md:flex-row md:space-y-0;
 
     .left {
-      @apply w-full;
+      @apply space-y-2;
+      @apply md:w-2/3;
 
-      .button {
-        @apply bg-white py-3.5 px-2.5 h-12 font-bold rounded-sm;
-        @apply text-primary-500 text-sm leading-snug;
+      .btn {
+        @apply bg-white py-3.5 px-2.5 h-12 rounded-sm text-primary-500;
+        @apply mt-6 #{!important};
+        @apply hover:bg-gray-200 hover:shadow;
         width: 180px;
       }
+    }
 
-      @media (min-width: theme("screens.md")) {
-        @apply w-2/3;
+    .right {
+      @apply space-y-6;
+
+      ul {
+        @apply space-y-2;
+
+        li {
+          @apply cursor-pointer hover:underline;
+        }
       }
     }
   }
@@ -254,7 +252,7 @@ section {
 
   .image {
     @apply relative;
-    height: 300px;
+    padding-top: 75%
   }
 
   .content {
