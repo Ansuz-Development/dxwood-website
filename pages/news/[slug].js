@@ -35,6 +35,7 @@ const NewsDetails = ({ news }) => {
             objectFit="cover"
             placeholder="blur"
             blurDataURL={thumbnailUrl}
+            priority={true}
           />
         </div>
         <div className="container md:px-20 md:py-32">

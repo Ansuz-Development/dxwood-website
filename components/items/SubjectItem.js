@@ -13,13 +13,14 @@ const SubjectItem = ({ item }) => {
       <div className="image">
         {item.cover.data && (
           <Image
-            alt="Subject image"
+            alt={item.title}
             src={url}
             draggable={false}
             placeholder="blur"
             blurDataURL={blurUrl}
             layout="fill"
             objectFit="cover"
+            loading="lazy"
           />
         )}
       </div>

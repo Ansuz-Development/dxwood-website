@@ -7,8 +7,6 @@ import { getFormattedImage } from "../../../helper/utils";
 const NewsItem = ({ item }) => {
   const { title, slug, cover, brief } = item.attributes;
 
-  console.log("item.attributes", item.attributes);
-
   const coverUrl = getFormattedImage(cover, "small");
   const thumbnailUrl = getFormattedImage(cover, "thumbnai");
 
@@ -17,13 +15,14 @@ const NewsItem = ({ item }) => {
       <div className="image">
         {coverUrl && (
           <Image
-            alt="Subject image"
+            alt={title}
             src={coverUrl}
             draggable={false}
             placeholder="blur"
             blurDataURL={thumbnailUrl}
             layout="fill"
             objectFit="cover"
+            loading="lazy"
           />
         )}
       </div>

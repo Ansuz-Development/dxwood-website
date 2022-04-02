@@ -22,8 +22,8 @@ const Home = ({ homepage, options }) => {
           layout="fill"
           objectFit="cover"
           priority={true}
+          placeholder="blur"
           // blurDataURL="data:..." automatically provided
-          // placeholder="blur" // Optional blur-up while loading
         />
       </div>
       <div className="container">

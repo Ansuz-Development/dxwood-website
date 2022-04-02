@@ -20,6 +20,7 @@ const MentorItem = ({ item }) => {
             blurDataURL={blurUrl}
             height={80}
             width={80}
+            loading="lazy"
           />
         )}
       </div>
