@@ -26,6 +26,7 @@ const AboutSection = ({ data }) => {
             blurDataURL={blurUrl}
             layout="fill"
             objectFit="cover"
+            priority={true}
           />
         </div>
       </div>
