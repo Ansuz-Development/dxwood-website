@@ -20,6 +20,7 @@ const Home = ({ homepage, options }) => {
           alt="DXWood"
           layout="fill"
           objectFit="cover"
+          priority={true}
           // blurDataURL="data:..." automatically provided
           // placeholder="blur" // Optional blur-up while loading
         />
