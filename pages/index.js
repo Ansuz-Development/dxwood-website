@@ -41,8 +41,6 @@ export async function getStaticProps() {
   const homepage = (await getHomepage()) || {};
   const posts = (await getPosts()) || [];
 
-  console.log("home:", homepage);
-
   return {
     props: {
       homepage,

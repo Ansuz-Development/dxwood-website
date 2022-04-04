@@ -32,8 +32,6 @@ export default async function handler(req, res) {
   try {
     const hook = req.body;
 
-    console.log("hook:", hook);
-
     switch (hook.event) {
       case "entry.update":
       case "entry.delete":
@@ -49,7 +47,7 @@ export default async function handler(req, res) {
             }),
           ]);
 
-          console.log("data:", data);
+          console.log("hook result:", data);
         }
         break;
       default:

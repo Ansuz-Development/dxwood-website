@@ -41,8 +41,6 @@ export default News;
 export async function getStaticProps() {
   const posts = (await getPosts()) || [];
 
-  console.log("posts:", posts);
-
   const news = posts.filter((item) => item.attributes.category === "news");
   const events = posts.filter((item) => item.attributes.category === "event");
 
