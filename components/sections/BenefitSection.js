@@ -31,6 +31,12 @@ const BenefitSection = ({ data }) => {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        <div className="w-full justify-center hidden md:flex">
+          <button className="btn" type="button">
+            Đăng ký
+          </button>
+        </div>
       </div>
     </section>
   );

@@ -287,3 +287,12 @@ section {
   //   @apply xl:hidden;
   // }
 }
+
+.btn {
+  @apply button;
+  @apply bg-primary-500 text-white rounded-sm;
+  @apply hover:bg-primary-700;
+
+  padding: 14px 10px;
+  width: 180px;
+}
