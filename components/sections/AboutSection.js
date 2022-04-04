@@ -30,14 +30,17 @@ const AboutSection = ({ data }) => {
             objectFit="cover"
             priority={true}
           />
-          <VerticalTimeline lineColor="#98A8E5" className="timeline">
-            {steps.map((e) => (
-              <VerticalTimelineElement key={e.label} iconClassName="bg-primary-500">
-                <h6>{e.label}</h6>
-                <span>{e.title}</span>
-              </VerticalTimelineElement>
-            ))}
-          </VerticalTimeline>
+          <div className="md:px-12 lg:px-24">
+            <VerticalTimeline lineColor="#98A8E5" className="timeline" animate={false}>
+              {steps.map((e) => (
+                <VerticalTimelineElement key={e.label} iconClassName="bg-primary-500">
+                  <div className="font-semibold">{e.label}</div>
+                  <div>{e.title}</div>
+                </VerticalTimelineElement>
+              ))}
+              <VerticalTimelineElement iconClassName="bg-primary-100" />
+            </VerticalTimeline>
+          </div>
         </div>
       </div>
     </section>

@@ -65,6 +65,10 @@ module.exports = {
       },
       maxWidth: {
         "2/3": "66.77%",
+        500: "500px",
+      },
+      minHeight: {
+        375: "375px",
       },
       fontSize: {
         "4xl": ["2.125rem", "1.35"],
