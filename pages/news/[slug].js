@@ -108,15 +108,17 @@ NewsDetails.propTypes = {};
 export default NewsDetails;
 
 export async function getStaticProps({ params }) {
+  console.log("In post:", params);
+
   const news = await getPostBySlug(params.slug);
+
+  console.log("news:", news);
 
   if (!news) {
     return {
       notFound: true,
     };
   }
-
-  console.log("news:", news);
 
   const tagIds = news.attributes.tags?.data?.map((tag) => tag.id);
 
@@ -132,6 +134,8 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
+  console.log("getStaticPaths");
+
   const newSlugs = await getPostSlugs();
 
   const paths = newSlugs?.map((post) => `/news/${post.attributes.slug}`);
