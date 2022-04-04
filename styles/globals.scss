@@ -207,21 +207,22 @@ section {
 
 #subjects {
   .swiper-slide-active {
-    @apply md:w-less80
+    @apply md:w-less80;
   }
 
   .subject-item {
-    @apply flex flex-col lg:flex-row;
+    @apply flex flex-col lg:flex-row border-2;
 
     .image {
-      @apply relative;
-      width: 500px !important;
-      height: 375px;
+      @apply relative w-full;
+      min-height: 375px;
+      max-width: 500px;
+      @apply self-center;
     }
 
     .content {
       @apply p-6 space-y-4 w-full;
-      @apply w-full md:w-less500;
+      @apply w-full lg:w-less500;
     }
   }
 }
