@@ -16,7 +16,7 @@ const AboutSection = ({ data }) => {
       <div className="space-y-6 md:space-y-16">
         <div className="text-center w-full md:max-w-2/3 space-y-4 mx-auto">
           <h4>{title}</h4>
-          <p>{description}</p>
+          {description && <p>{description}</p>}
         </div>
         <div className="image-16x9">
           <Image

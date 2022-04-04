@@ -26,8 +26,8 @@ const SubjectSection = ({ data }) => {
           modules={[Pagination, Navigation]}
           className="custom-swiper"
         >
-          {subjects.map((subject) => (
-            <SwiperSlide key={subject.title}>
+          {subjects.map((subject, index) => (
+            <SwiperSlide key={index}>
               <SubjectItem item={subject} />
             </SwiperSlide>
           ))}

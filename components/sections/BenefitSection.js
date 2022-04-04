@@ -16,7 +16,7 @@ const BenefitSection = ({ data }) => {
       <div className="space-y-6 md:space-y-10">
         <div className="text-center w-full md:max-w-2/3 space-y-4 mx-auto">
           <h4>{title}</h4>
-          <p>{description}</p>
+          {description && <p>{description}</p>}
         </div>
         <Swiper
           slidesPerView={isMobile() ? 1 : 4}
@@ -25,8 +25,8 @@ const BenefitSection = ({ data }) => {
           modules={[Pagination, Navigation]}
           className="custom-swiper"
         >
-          {benefits.map((benefit) => (
-            <SwiperSlide key={benefit.title}>
+          {benefits.map((benefit, index) => (
+            <SwiperSlide key={index}>
               <BenefitItem item={benefit} />
             </SwiperSlide>
           ))}
