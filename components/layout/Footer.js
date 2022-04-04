@@ -1,17 +1,19 @@
 import React, { useEffect } from "react";
-
 import { Link, scrollSpy } from "react-scroll";
+import NextLink from "next/link";
+import { useRouter } from "next/router";
 
 const list = [
   { id: "home", label: "Trang chủ" },
   { id: "about", label: "Về dự án" },
   { id: "subjects", label: "Nội dung đào tạo" },
   { id: "mentors", label: "Mentor" },
-  // { id: "news", label: "Tin tức - Sự kiện" },
   { id: "contact", label: "Liên hệ" },
 ];
 
 const Footer = () => {
+  const router = useRouter();
+
   useEffect(() => {
     scrollSpy.update();
   }, []);
@@ -35,17 +37,23 @@ const Footer = () => {
           <ul>
             {list.map((item) => (
               <li key={item.id}>
-                <Link
-                  activeClass="active"
-                  to={item.id}
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  delay={200}
-                >
-                  {item.label}
-                </Link>
+                {router.pathname === "/" ? (
+                  <Link
+                    activeClass="active"
+                    to={item.id}
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    delay={200}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <NextLink href={`/#${item.id}`}>
+                    <a className="active">{item.label}</a>
+                  </NextLink>
+                )}
               </li>
             ))}
           </ul>

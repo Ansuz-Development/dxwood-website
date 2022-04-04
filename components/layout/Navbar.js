@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Link, scrollSpy } from "react-scroll";
+import NextLink from "next/link";
+import { useRouter } from "next/router";
+
 import useMobileDetect from "../../helper/useMobileDetect";
 
 const menuList = [
@@ -12,6 +15,8 @@ const menuList = [
 ];
 
 const Navbar = () => {
+  const router = useRouter();
+
   const { isMobile } = useMobileDetect();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -32,18 +37,24 @@ const Navbar = () => {
       >
         {menuList.map((item) => (
           <li key={item.id}>
-            <Link
-              className="navbar-item"
-              activeClass="active"
-              to={item.id}
-              spy={true}
-              smooth={true}
-              offset={-80}
-              duration={500}
-              delay={200}
-            >
-              {item.label}
-            </Link>
+            {router.pathname === "/" ? (
+              <Link
+                className="navbar-item"
+                activeClass="active"
+                to={item.id}
+                spy={true}
+                smooth={true}
+                offset={-80}
+                duration={500}
+                delay={200}
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <NextLink href={`/#${item.id}`}>
+                <a className="navbar-item">{item.label}</a>
+              </NextLink>
+            )}
           </li>
         ))}
       </ul>
