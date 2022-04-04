@@ -32,6 +32,8 @@ export default async function handler(req, res) {
   try {
     const hook = req.body;
 
+    console.log("modes:", hook.model, ", event:", hook.event);
+
     switch (hook.event) {
       case "entry.update":
       case "entry.delete":

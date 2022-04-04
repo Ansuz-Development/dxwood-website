@@ -116,6 +116,8 @@ export async function getStaticProps({ params }) {
     };
   }
 
+  console.log("news:", news);
+
   const tagIds = news.attributes.tags?.data?.map((tag) => tag.id);
 
   const relatedNews = await getRelatedPosts(news.id, tagIds);
