@@ -9,8 +9,6 @@ import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/navigation";
 
-import "react-vertical-timeline-component/style.min.css";
-
 import bannerBackground from "../assests/hero-bg.jpg";
 
 const Home = ({ homepage, options }) => {
