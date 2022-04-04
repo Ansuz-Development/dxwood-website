@@ -2,11 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Image from "next/image";
+import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 
 import { getImageUrl, getFormattedImage } from "../../helper/utils";
 
 const AboutSection = ({ data }) => {
-  const { title, description, cover } = data;
+  const { title, description, cover, steps } = data;
 
   const url = getImageUrl(cover);
   const blurUrl = getFormattedImage(cover, "thumbnail");
@@ -18,7 +19,8 @@ const AboutSection = ({ data }) => {
           <h4>{title}</h4>
           {description && <p>{description}</p>}
         </div>
-        <div className="image-16x9">
+
+        <div className="relative">
           <Image
             alt={title}
             src={url}
@@ -28,6 +30,14 @@ const AboutSection = ({ data }) => {
             objectFit="cover"
             priority={true}
           />
+          <VerticalTimeline lineColor="#98A8E5" className="timeline">
+            {steps.map((e) => (
+              <VerticalTimelineElement key={e.label} iconClassName="bg-primary-500">
+                <h6>{e.label}</h6>
+                <span>{e.title}</span>
+              </VerticalTimelineElement>
+            ))}
+          </VerticalTimeline>
         </div>
       </div>
     </section>
@@ -36,9 +46,15 @@ const AboutSection = ({ data }) => {
 
 AboutSection.propTypes = {
   data: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
     cover: PropTypes.object.isRequired,
+    description: PropTypes.string.isRequired,
+    steps: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string,
+        title: PropTypes.string,
+      }),
+    ),
+    title: PropTypes.string.isRequired,
   }),
 };
 
