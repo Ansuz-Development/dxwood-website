@@ -36,14 +36,16 @@ export default async function handler(req, res) {
       case "entry.update":
       case "entry.delete":
       case "entry.unpublish":
-        await Promise.all([
-          res.unstable_revalidate("/"),
-          async () => {
-            if (hook.model === "post") {
-              await res.unstable_revalidate(`/news/${hook.entry.slug}`);
-            }
-          },
-        ]);
+        if (hook.model === "post" || hook.model === "homepage") {
+          await Promise.all([
+            res.unstable_revalidate("/"),
+            async () => {
+              if (hook.model === "post") {
+                await res.unstable_revalidate(`/news/${hook.entry.slug}`);
+              }
+            },
+          ]);
+        }
         break;
       default:
         break;
