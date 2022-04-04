@@ -10,11 +10,12 @@ const MyDocument = () => (
       <meta name="author" content="AnsuzDev" />
       <meta name="copyright" content="AnsuzDev" />
 
-      <meta name="application-name" content="PWA App" />
+      <meta name="application-name" content="DxWoodaaaaaaaaa" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-      <meta name="apple-mobile-web-app-title" content="PWA App" />
-      <meta name="description" content="Best PWA App in the world" />
+      <meta name="apple-mobile-web-app-title" content="DxWood" />
+      <meta name="description" content="DxWood" />
+
       <meta name="format-detection" content="telephone=no" />
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="msapplication-config" content="/icons/browserconfig.xml" />

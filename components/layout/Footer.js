@@ -7,7 +7,7 @@ const list = [
   { id: "about", label: "Về dự án" },
   { id: "subjects", label: "Nội dung đào tạo" },
   { id: "mentors", label: "Mentor" },
-  { id: "news", label: "Tin tức - Sự kiện" },
+  // { id: "news", label: "Tin tức - Sự kiện" },
   { id: "contact", label: "Liên hệ" },
 ];
 
