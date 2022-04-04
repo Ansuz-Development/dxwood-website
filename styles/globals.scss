@@ -296,3 +296,23 @@ section {
   padding: 14px 10px;
   width: 180px;
 }
+
+.custome-timeline {
+  @apply relative py-12;
+
+  .line {
+    @apply absolute border-r-2 border-gray-500 border-dashed md:ml-halfless1 h-less96;
+  }
+
+  .timeline-item {
+    @apply relative flex md:odd:flex-row-reverse md:odd:text-right md:justify-end space-x-4 md:odd:space-x-reverse;
+
+    .bullet {
+      @apply w-3 h-3 bg-primary-500 rounded-full mt-3 border border-primary-400 -ml-1 md:ml-0;
+    }
+
+    .content {
+      @apply bg-white bg-opacity-90 px-4 py-2 shadow w-full md:w-halfless22;
+    }
+  }
+}

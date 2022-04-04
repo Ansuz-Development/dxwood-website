@@ -61,7 +61,9 @@ module.exports = {
         176: "44rem",
         204: "51rem",
         less80: "calc(100% - 80px)",
+        less96: "calc(100% - 96px)",
         less500: "calc(100% - 500px)",
+        halfless22: "calc(50% - 22px)",
       },
       maxWidth: {
         "2/3": "66.77%",
@@ -75,6 +77,9 @@ module.exports = {
       },
       boxShadow: {
         DEFAULT: "0px 1px 8px rgba(0, 0, 0, 0.25)",
+      },
+      margin: {
+        halfless1: "calc(50% - 1px)",
       },
     },
   },

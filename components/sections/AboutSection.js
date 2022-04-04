@@ -2,9 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Image from "next/image";
-import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
-
 import { getImageUrl, getFormattedImage } from "../../helper/utils";
+import TimelineItem from "../items/TimelineItem";
 
 const AboutSection = ({ data }) => {
   const { title, description, cover, steps } = data;
@@ -30,16 +29,8 @@ const AboutSection = ({ data }) => {
             objectFit="cover"
             priority={true}
           />
-          <div className="md:px-12 lg:px-24">
-            <VerticalTimeline lineColor="#98A8E5" className="timeline" animate={false}>
-              {steps.map((e) => (
-                <VerticalTimelineElement key={e.label} iconClassName="bg-primary-500">
-                  <div className="font-semibold">{e.label}</div>
-                  <div>{e.title}</div>
-                </VerticalTimelineElement>
-              ))}
-              <VerticalTimelineElement iconClassName="bg-primary-100" />
-            </VerticalTimeline>
+          <div className="px-4 md:px-12 lg:px-24">
+            <TimelineItem steps={steps} />
           </div>
         </div>
       </div>
