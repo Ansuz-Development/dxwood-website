@@ -29,8 +29,8 @@ const CompanySection = ({ data }) => {
           modules={[Autoplay, Pagination, Navigation]}
           className="custom-swiper"
         >
-          {companies.map((company) => (
-            <SwiperSlide key={company.name}>
+          {companies.map((company, index) => (
+            <SwiperSlide key={index}>
               <CompanyItem item={company} />
             </SwiperSlide>
           ))}

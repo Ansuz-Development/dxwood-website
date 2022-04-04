@@ -8,7 +8,7 @@ const NewsItem = ({ item }) => {
   const { title, slug, cover, brief } = item.attributes;
 
   const coverUrl = getFormattedImage(cover, "small");
-  const thumbnailUrl = getFormattedImage(cover, "thumbnai");
+  const thumbnailUrl = getFormattedImage(cover, "thumbnail");
 
   return (
     <div className="news-item">
@@ -56,14 +56,16 @@ const NewsItem = ({ item }) => {
 };
 
 NewsItem.propTypes = {
-  id: PropTypes.number.isRequired,
-  attributes: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    brief: PropTypes.string,
-    content: PropTypes.string,
-    slug: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-    cover: PropTypes.object.isRequired,
+  item: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    attributes: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      brief: PropTypes.string,
+      content: PropTypes.string,
+      slug: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+      cover: PropTypes.object.isRequired,
+    }),
   }),
 };
 
