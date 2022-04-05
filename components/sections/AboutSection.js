@@ -23,6 +23,7 @@ const AboutSection = ({ data }) => {
           <Image
             alt={title}
             src={url}
+            className="blur-sm"
             placeholder="blur"
             blurDataURL={blurUrl}
             layout="fill"
