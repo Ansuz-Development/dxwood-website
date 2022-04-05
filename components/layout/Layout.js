@@ -12,16 +12,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Head>
-        <title>DxWood</title>
-        <meta name="author" content="AnsuzDev" />
-        <meta name="copyright" content="AnsuzDev" />
-        <meta name="theme-color" content="#fff" />
-        <meta charSet="utf-8" />
-
-        <meta name="author" content="AnsuzDev" />
-        <meta name="copyright" content="AnsuzDev" />
-
-        <link rel="icon" href="/favicon.ico" />
+        <title>CIO ngành gỗ</title>
       </Head>
       <Navbar />
       <main>{children}</main>

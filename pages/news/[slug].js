@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import Link from "next/link";
+import Head from "next/head";
 import { getPostBySlug, getRelatedPosts, getPostSlugs } from "../../lib/api";
 import SEOItem from "../../components/items/SEOItem";
 import { fixContent, getFormattedImage, getImageUrl } from "../../helper/utils";
@@ -29,6 +30,9 @@ const NewsDetails = ({ news, relatedNews }) => {
 
   return (
     <>
+      <Head>
+        <title>{title}</title>
+      </Head>
       <SEOItem seo={news.attributes?.seo} />
       <div className="relative">
         <div className="relative md:absolute w-full h-48 md:h-96 -z-10">

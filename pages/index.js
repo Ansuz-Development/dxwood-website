@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import Head from "next/head";
 import SEOItem from "../components/items/SEOItem";
 import renderSection from "../components/sections";
 
@@ -15,6 +15,9 @@ import bannerBackground from "../assests/hero-bg.jpg";
 const Home = ({ homepage, options }) => {
   return (
     <>
+      <Head>
+        <title>CIO ngành gỗ</title>
+      </Head>
       <SEOItem seo={homepage.attributes?.seo} />
       <div id="home" className="relative h-32 md:h-96">
         <Image
