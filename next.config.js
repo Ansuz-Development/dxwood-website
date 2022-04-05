@@ -26,7 +26,7 @@ const nextConfig = {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 2592000,
     // Todo
-    domains: ["strapi.ansuzdev.com"],
+    domains: ["cio-cms.hawa.vn"],
   },
   // swcMinify: true,
 };

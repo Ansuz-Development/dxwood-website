@@ -3,7 +3,7 @@ import Image from "next/image";
 import SEOItem from "../components/items/SEOItem";
 import renderSection from "../components/sections";
 
-import { getHomepage, getPosts } from "../lib/api";
+import { getHomepage, getLatestPosts } from "../lib/api";
 
 import "swiper/css";
 import "swiper/css/grid";
@@ -38,7 +38,7 @@ export default Home;
 
 export async function getStaticProps() {
   const homepage = (await getHomepage()) || {};
-  const posts = (await getPosts()) || [];
+  const posts = (await getLatestPosts()) || [];
 
   return {
     props: {
