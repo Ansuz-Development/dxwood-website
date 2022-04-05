@@ -238,12 +238,12 @@ section {
 }
 
 .btn {
-  @apply button;
+  @apply inline-block button;
   @apply bg-primary-500 text-white rounded-sm text-center;
   @apply hover:bg-primary-700;
 
   padding: 14px 10px;
-  width: 180px;
+  min-width: 180px;
 
   &.btn-light {
     @apply bg-primary-50 text-primary-500;
