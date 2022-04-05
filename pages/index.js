@@ -8,6 +8,7 @@ import { getHomepage, getPosts } from "../lib/api";
 import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 import bannerBackground from "../assests/hero-bg.jpg";
 

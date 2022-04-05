@@ -26,6 +26,9 @@ const CompanySection = ({ data }) => {
             delay: 3000,
             disableOnInteraction: false,
           }}
+          pagination={{
+            clickable: true,
+          }}
           modules={[Autoplay, Pagination, Navigation]}
           className="custom-swiper"
         >

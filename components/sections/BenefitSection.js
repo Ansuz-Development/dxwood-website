@@ -22,6 +22,9 @@ const BenefitSection = ({ data }) => {
           slidesPerView={isMobile() ? 1 : 4}
           spaceBetween={24}
           navigation={true}
+          pagination={{
+            clickable: true,
+          }}
           modules={[Pagination, Navigation]}
           className="custom-swiper"
         >
