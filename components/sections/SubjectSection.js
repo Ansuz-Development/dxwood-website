@@ -5,11 +5,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 
 import SubjectItem from "../items/SubjectItem";
-import useMobileDetect from "../../helper/useMobileDetect";
 
 const SubjectSection = ({ data }) => {
   const { title, description, subjects } = data;
-  const { isMobile } = useMobileDetect();
 
   return (
     <section id="subjects">
@@ -18,16 +16,19 @@ const SubjectSection = ({ data }) => {
           <h4>{title}</h4>
           {description && <p>{description}</p>}
         </div>
-
         <Swiper
-          slidesPerView={isMobile() ? 1 : "auto"}
-          navigation={true}
+          slidesPerView="auto"
           spaceBetween={24}
           modules={[Pagination, Navigation]}
-          className="custom-swiper"
+          loop={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          className={"custom-swiper"}
         >
-          {subjects.map((subject, index) => (
-            <SwiperSlide key={index}>
+          {subjects.map((subject) => (
+            <SwiperSlide key={subject.title}>
               <SubjectItem item={subject} />
             </SwiperSlide>
           ))}

@@ -22,6 +22,9 @@ const EventSection = ({ data }) => {
           slidesPerView={isMobile() ? 1 : 3}
           spaceBetween={24}
           navigation={true}
+          pagination={{
+            clickable: true,
+          }}
           modules={[Pagination, Navigation]}
           className="custom-swiper"
         >

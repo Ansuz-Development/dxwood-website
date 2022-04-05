@@ -25,6 +25,9 @@ const MentorSection = ({ data }) => {
           grid={{
             rows: isMobile() ? 1 : 2,
           }}
+          pagination={{
+            clickable: true,
+          }}
           spaceBetween={24}
           navigation={true}
           modules={[Grid, Pagination, Navigation]}

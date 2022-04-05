@@ -7,7 +7,7 @@ const CompanyItem = ({ item }) => {
   const logoUrl = getImageUrl(item.logo);
 
   return (
-    <div className="px-9 py-6">
+    <div className="flex justify-center px-9 py-6">
       <Image src={logoUrl} width={222} height={148} alt={item.name} objectFit="contain" />
     </div>
   );
