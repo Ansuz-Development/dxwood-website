@@ -31,7 +31,9 @@ const Footer = () => {
                   incididunt.
                 </h6>
               </div>
-              <button className="btn btn-light">Đăng ký</button>
+              <a href="#" className="btn btn-light">
+                Đăng ký
+              </a>
             </div>
 
             <div className="col-span-3 space-y-6">

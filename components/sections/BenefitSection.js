@@ -37,7 +37,7 @@ const BenefitSection = ({ data }) => {
           </Swiper>
 
           <div className="w-full justify-center hidden md:flex">
-            <a href={buttonLink} target="_blank" rel="noreferrer" className="btn" type="button">
+            <a href={buttonLink} target="_blank" rel="noreferrer" className="btn">
               {buttonTitle || "Đăng ký"}
             </a>
           </div>
