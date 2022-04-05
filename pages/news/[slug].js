@@ -42,8 +42,8 @@ const NewsDetails = ({ news, relatedNews }) => {
             priority={true}
           />
         </div>
-        <div className="container">
-          <section>
+        <section>
+          <div className="container">
             <div className="md:px-20 md:pt-20">
               <div className="bg-white min-h-screen py-4 md:p-6 md:shadow">
                 <nav className="mb-4" aria-label="Breadcrumb">
@@ -90,14 +90,14 @@ const NewsDetails = ({ news, relatedNews }) => {
                 </div>
               </div>
             </div>
-          </section>
-          <EventSection
-            data={{
-              title: "Tin tức - sự kiện liên quan",
-              posts: relatedNews,
-            }}
-          />
-        </div>
+          </div>
+        </section>
+        <EventSection
+          data={{
+            title: "Tin tức - sự kiện liên quan",
+            posts: relatedNews,
+          }}
+        />
       </div>
     </>
   );

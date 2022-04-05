@@ -5,7 +5,7 @@ import Image from "next/image";
 import { getFormattedImage } from "../../helper/utils";
 
 const SubjectItem = ({ item }) => {
-  const url = getFormattedImage(item.cover, "medium");
+  const url = getFormattedImage(item.cover, "small");
   const blurUrl = getFormattedImage(item.cover, "thumbnail");
 
   return (
@@ -28,7 +28,7 @@ const SubjectItem = ({ item }) => {
         <h5 className="text-primary-500 uppercase">
           {item.heading}: {item.title}
         </h5>
-        <p className="body-1">{item.description}</p>
+        <p className="body-1 whitespace-pre-line">{item.description}</p>
       </div>
     </div>
   );

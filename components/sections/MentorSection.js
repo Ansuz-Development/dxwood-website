@@ -13,32 +13,34 @@ const MentorSection = ({ data }) => {
   const { isMobile } = useMobileDetect();
 
   return (
-    <section id="mentors">
-      <div className="space-y-6 md:space-y-10">
-        <div className="text-center w-full md:max-w-2/3 space-y-4 mx-auto">
-          <h4>{title}</h4>
-          {description && <p>{description}</p>}
-        </div>
+    <section id="mentors" className="bg-surface">
+      <div className="container">
+        <div className="space-y-6 md:space-y-10">
+          <div className="text-center w-full md:max-w-2/3 space-y-4 mx-auto">
+            <h4>{title}</h4>
+            {description && <p>{description}</p>}
+          </div>
 
-        <Swiper
-          slidesPerView={isMobile() ? 1 : 2}
-          grid={{
-            rows: isMobile() ? 1 : 2,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          spaceBetween={24}
-          navigation={true}
-          modules={[Grid, Pagination, Navigation]}
-          className="custom-swiper"
-        >
-          {mentors.map((mentor) => (
-            <SwiperSlide key={mentor.title}>
-              <MentorItem item={mentor} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+          <Swiper
+            slidesPerView={isMobile() ? 1 : 2}
+            grid={{
+              rows: isMobile() ? 1 : 2,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            spaceBetween={24}
+            navigation={true}
+            modules={[Grid, Pagination, Navigation]}
+            className="custom-swiper"
+          >
+            {mentors.map((mentor) => (
+              <SwiperSlide key={mentor.title}>
+                <MentorItem item={mentor} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </section>
   );

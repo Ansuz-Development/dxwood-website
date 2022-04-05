@@ -49,7 +49,7 @@ module.exports = {
       },
       black: "#111111",
       white: "#FFFFFF",
-      surface: "#FFFFFF",
+      surface: "#FAFBFC",
       light: "#DFDFDF",
       outline: "#E5E5E6",
       divider: "#DADADA",
