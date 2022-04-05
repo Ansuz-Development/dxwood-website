@@ -11,8 +11,6 @@ const BenefitSection = ({ data }) => {
   const { title, description, buttonLink, buttonTitle, benefits } = data;
   const { isMobile } = useMobileDetect();
 
-  console.log(data);
-
   return (
     <section id="benefits">
       <div className="container">
