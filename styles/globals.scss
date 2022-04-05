@@ -68,36 +68,6 @@ body {
 
 footer {
   @apply bg-primary-500 text-white;
-
-  .container {
-    @apply space-y-6 py-6;
-    @apply flex flex-col;
-    @apply md:flex-row md:space-y-0;
-
-    .left {
-      @apply space-y-2;
-      @apply md:w-2/3;
-
-      .btn {
-        @apply bg-white py-3.5 px-2.5 h-12 rounded-sm text-primary-500;
-        @apply mt-6 #{!important};
-        @apply hover:bg-gray-200 hover:shadow;
-        width: 180px;
-      }
-    }
-
-    .right {
-      @apply space-y-6;
-
-      ul {
-        @apply space-y-2;
-
-        li {
-          @apply cursor-pointer hover:underline;
-        }
-      }
-    }
-  }
 }
 
 section {
@@ -269,11 +239,16 @@ section {
 
 .btn {
   @apply button;
-  @apply bg-primary-500 text-white rounded-sm;
+  @apply bg-primary-500 text-white rounded-sm text-center;
   @apply hover:bg-primary-700;
 
   padding: 14px 10px;
   width: 180px;
+
+  &.btn-light {
+    @apply bg-primary-50 text-primary-500;
+    @apply hover:bg-white;
+  }
 }
 
 .custome-timeline {

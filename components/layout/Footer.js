@@ -20,45 +20,49 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className="container">
-        <div className="left">
-          <h4 className="font-semibold">Sẵn sàng tham gia dự án?</h4>
-          <h6 className="text-white mt-5 mb-10">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt.
-          </h6>
-          <button type="button" className="btn button">
-            Đăng ký
-          </button>
-        </div>
+      <section>
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <div className="col-span-9 space-y-6">
+              <div className="space-y-2">
+                <h4 className="font-semibold">Sẵn sàng tham gia dự án cùng chúng tôi!</h4>
+                <h6>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt.
+                </h6>
+              </div>
+              <button className="btn btn-light">Đăng ký</button>
+            </div>
 
-        <div className="right">
-          <h6>Điều hướng</h6>
-          <ul>
-            {list.map((item) => (
-              <li key={item.id}>
-                {router.pathname === "/" ? (
-                  <Link
-                    activeClass="active"
-                    to={item.id}
-                    spy={true}
-                    smooth={true}
-                    offset={-80}
-                    duration={500}
-                    delay={200}
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
-                  <NextLink href={`/#${item.id}`}>
-                    <a className="active">{item.label}</a>
-                  </NextLink>
-                )}
-              </li>
-            ))}
-          </ul>
+            <div className="col-span-3 space-y-6">
+              <h6>Điều hướng</h6>
+              <ul className="space-y-2">
+                {list.map((item) => (
+                  <li key={item.id} className="cursor-pointer hover:underline">
+                    {router.pathname === "/" ? (
+                      <Link
+                        activeClass="active"
+                        to={item.id}
+                        spy={true}
+                        smooth={true}
+                        offset={-80}
+                        duration={500}
+                        delay={200}
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <NextLink href={`/#${item.id}`}>
+                        <a className="active">{item.label}</a>
+                      </NextLink>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </footer>
   );
 };

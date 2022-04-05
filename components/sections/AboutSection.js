@@ -13,25 +13,27 @@ const AboutSection = ({ data }) => {
 
   return (
     <section id="about">
-      <div className="space-y-6 md:space-y-16">
-        <div className="text-center w-full md:max-w-2/3 space-y-4 mx-auto">
-          <h4>{title}</h4>
-          {description && <p>{description}</p>}
-        </div>
+      <div className="container">
+        <div className="space-y-6 md:space-y-16">
+          <div className="text-center w-full md:max-w-2/3 space-y-4 mx-auto">
+            <h4>{title}</h4>
+            {description && <p>{description}</p>}
+          </div>
 
-        <div className="relative">
-          <Image
-            alt={title}
-            src={url}
-            className="blur-sm"
-            placeholder="blur"
-            blurDataURL={blurUrl}
-            layout="fill"
-            objectFit="cover"
-            priority={true}
-          />
-          <div className="px-4 md:px-12 lg:px-24">
-            <TimelineItem steps={steps} />
+          <div className="relative">
+            <Image
+              alt={title}
+              src={url}
+              className="blur-sm"
+              placeholder="blur"
+              blurDataURL={blurUrl}
+              layout="fill"
+              objectFit="cover"
+              priority={true}
+            />
+            <div className="px-4 md:px-12 lg:px-24">
+              <TimelineItem steps={steps} />
+            </div>
           </div>
         </div>
       </div>

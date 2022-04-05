@@ -27,11 +27,9 @@ const Home = ({ homepage, options }) => {
           // blurDataURL="data:..." automatically provided
         />
       </div>
-      <div className="container">
-        {homepage.attributes?.sections?.map((section) => {
-          return <div key={section.__typename}>{renderSection(section, options)}</div>;
-        })}
-      </div>
+      {homepage.attributes?.sections?.map((section) => {
+        return <div key={section.__typename}>{renderSection(section, options)}</div>;
+      })}
     </>
   );
 };
