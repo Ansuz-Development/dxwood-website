@@ -38,7 +38,7 @@ const SubjectSection = ({ data }) => {
           </Swiper>
 
           {contentFileUrl && (
-            <div className="w-full justify-center">
+            <div className="w-full justify-center flex">
               <a
                 href={contentFileUrl}
                 target="_blank"
