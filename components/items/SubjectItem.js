@@ -2,11 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
 
-import { getFormattedImage } from "../../helper/utils";
+import { getFormattedImage, shimmerBlur } from "../../helper/utils";
 
 const SubjectItem = ({ item }) => {
   const url = getFormattedImage(item.cover, "small");
-  const blurUrl = getFormattedImage(item.cover, "thumbnail");
 
   return (
     <div className="subject-item">
@@ -17,7 +16,7 @@ const SubjectItem = ({ item }) => {
             src={url}
             draggable={false}
             placeholder="blur"
-            blurDataURL={blurUrl}
+            blurDataURL={shimmerBlur(500, 375)}
             layout="fill"
             objectFit="cover"
             loading="lazy"

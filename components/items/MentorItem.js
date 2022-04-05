@@ -1,23 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
-import { getFormattedImage } from "../../helper/utils";
+import { getFormattedImage, shimmerBlur } from "../../helper/utils";
 
 const MentorItem = ({ item }) => {
   const url = getFormattedImage(item.avatar, "small");
-  const blurUrl = getFormattedImage(item.avatar, "thumbnail");
 
   return (
     <div className="mentor-item">
       <div className="w-20 h-20 ">
         {item.avatar.data && (
           <Image
-            alt="Mentor image"
+            alt={item.title}
             className="w-full h-full object-cover rounded-full"
             src={url}
             draggable={false}
             placeholder="blur"
-            blurDataURL={blurUrl}
+            blurDataURL={shimmerBlur(80, 80)}
             height={80}
             width={80}
             loading="lazy"

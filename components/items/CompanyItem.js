@@ -1,14 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
-import { getImageUrl } from "../../helper/utils";
+import { getImageUrl, shimmerBlur } from "../../helper/utils";
 
 const CompanyItem = ({ item }) => {
   const logoUrl = getImageUrl(item.logo);
 
   return (
     <div className="flex justify-center px-9 py-6">
-      <Image src={logoUrl} width={222} height={148} alt={item.name} objectFit="contain" />
+      <Image
+        src={logoUrl}
+        width={222}
+        height={148}
+        alt={item.name}
+        objectFit="contain"
+        placeholder="blur"
+        blurDataURL={shimmerBlur(222, 148)}
+        loading="lazy"
+      />
     </div>
   );
 };

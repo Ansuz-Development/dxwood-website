@@ -2,13 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
 import Link from "next/link";
-import { getFormattedImage } from "../../../helper/utils";
+import { getFormattedImage, shimmerBlur } from "../../../helper/utils";
 
 const NewsItem = ({ item }) => {
   const { title, slug, cover, brief } = item.attributes;
 
   const coverUrl = getFormattedImage(cover, "small");
-  const thumbnailUrl = getFormattedImage(cover, "thumbnail");
 
   return (
     <div className="news-item">
@@ -19,7 +18,7 @@ const NewsItem = ({ item }) => {
             src={coverUrl}
             draggable={false}
             placeholder="blur"
-            blurDataURL={thumbnailUrl}
+            blurDataURL={shimmerBlur(400, 300)}
             layout="fill"
             objectFit="cover"
             loading="lazy"

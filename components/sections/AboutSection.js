@@ -2,14 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Image from "next/image";
-import { getImageUrl, getFormattedImage } from "../../helper/utils";
+import { getImageUrl, getFormattedImage, shimmerBlur } from "../../helper/utils";
 import TimelineItem from "../items/TimelineItem";
 
 const AboutSection = ({ data }) => {
   const { title, description, cover, steps } = data;
 
   const url = getImageUrl(cover);
-  const blurUrl = getFormattedImage(cover, "thumbnail");
 
   return (
     <section id="about">
@@ -26,7 +25,7 @@ const AboutSection = ({ data }) => {
               src={url}
               className="blur-sm"
               placeholder="blur"
-              blurDataURL={blurUrl}
+              blurDataURL={shimmerBlur(1248, 702)}
               layout="fill"
               objectFit="cover"
               priority={true}
