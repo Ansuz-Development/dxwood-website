@@ -5,9 +5,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 
 import SubjectItem from "../items/SubjectItem";
+import { getImageUrl } from "../../helper/utils";
 
 const SubjectSection = ({ data }) => {
-  const { title, description, subjects } = data;
+  const { title, description, subjects, downloadButtonTitle, contentFile } = data;
+
+  const contentFileUrl = getImageUrl(contentFile);
 
   return (
     <section id="subjects">
@@ -33,6 +36,20 @@ const SubjectSection = ({ data }) => {
               </SwiperSlide>
             ))}
           </Swiper>
+
+          {contentFileUrl && (
+            <div className="w-full justify-center hidden md:flex">
+              <a
+                href={contentFileUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="btn"
+                type="button"
+              >
+                {downloadButtonTitle || "Tải nội dung đào tạo"}
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </section>
@@ -44,6 +61,8 @@ SubjectSection.propTypes = {
     description: PropTypes.string,
     subjects: PropTypes.array,
     title: PropTypes.string,
+    downloadButtonTitle: PropTypes.string,
+    contentFile: PropTypes.object,
   }),
 };
 
