@@ -39,13 +39,7 @@ const SubjectSection = ({ data }) => {
 
           {contentFileUrl && (
             <div className="w-full justify-center flex">
-              <a
-                href={contentFileUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="btn"
-                type="button"
-              >
+              <a href={contentFileUrl} target="_blank" rel="noreferrer" className="btn">
                 {downloadButtonTitle || "Tải nội dung đào tạo"}
               </a>
             </div>
