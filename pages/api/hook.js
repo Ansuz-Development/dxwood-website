@@ -40,7 +40,6 @@ export default async function handler(req, res) {
           const data = await Promise.all([
             res.unstable_revalidate("/"),
             Promise.resolve().then(() => {
-              console.log("Revalidate post");
               if (hook.model === "post") {
                 return res.unstable_revalidate(`/news/${hook.entry.slug}`);
               }

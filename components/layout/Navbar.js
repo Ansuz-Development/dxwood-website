@@ -9,7 +9,7 @@ const menuList = [
   { id: "home", label: "Trang chủ" },
   { id: "about", label: "Về dự án" },
   { id: "subjects", label: "Nội dung đào tạo" },
-  { id: "mentors", label: "Mentor" },
+  { id: "mentors", label: "Đội ngũ chuyên gia" },
   { id: "news", label: "Tin tức - Sự kiện" },
   { id: "contact", label: "Liên hệ" },
 ];

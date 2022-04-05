@@ -24,7 +24,7 @@ const MentorSection = ({ data }) => {
           <Swiper
             slidesPerView={isMobile() ? 1 : 2}
             grid={{
-              rows: isMobile() ? 1 : 2,
+              rows: 1,
             }}
             pagination={{
               clickable: true,

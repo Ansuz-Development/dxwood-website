@@ -31,7 +31,7 @@ const NewsItem = ({ item }) => {
             <h6 className="hover:text-primary-500">{title}</h6>
           </a>
         </Link>
-        <p className="body-1">{brief}</p>
+        <p className="news-brief">{brief}</p>
         <div className="button flex flex-row items-center space-x-1">
           <Link href={`/news/${slug}`}>
             <a className="text-primary-500">Đọc thêm</a>

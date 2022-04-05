@@ -234,6 +234,15 @@ section {
 
   .content {
     @apply space-y-2;
+
+    .news-brief {
+      @apply body-1;
+
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+    }
   }
 }
 
