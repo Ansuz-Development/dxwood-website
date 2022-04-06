@@ -4,12 +4,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 
 import BenefitItem, { BenefitItemProps } from "../items/BenefitItem";
-import useMobileDetect from "../../helper/useMobileDetect";
 
 // import Swiper styles
 const BenefitSection = ({ data }) => {
   const { title, description, buttonLink, buttonTitle, benefits } = data;
-  const { isMobile } = useMobileDetect();
 
   return (
     <section id="benefits">
@@ -20,7 +18,7 @@ const BenefitSection = ({ data }) => {
             {description && <p>{description}</p>}
           </div>
           <Swiper
-            slidesPerView={isMobile() ? 1 : 4}
+            slidesPerView={1}
             spaceBetween={24}
             navigation={true}
             pagination={{
@@ -28,6 +26,17 @@ const BenefitSection = ({ data }) => {
             }}
             modules={[Pagination, Navigation]}
             className="custom-swiper"
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+              1248: {
+                slidesPerView: 4,
+              },
+            }}
           >
             {benefits.map((benefit, index) => (
               <SwiperSlide key={index}>

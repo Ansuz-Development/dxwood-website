@@ -9,19 +9,21 @@ const SubjectItem = ({ item }) => {
 
   return (
     <div className="subject-item">
-      <div className="image">
-        {item.cover.data && (
-          <Image
-            alt={item.title}
-            src={url}
-            draggable={false}
-            placeholder="blur"
-            blurDataURL={shimmerBlur(500, 375)}
-            layout="fill"
-            objectFit="cover"
-            loading="lazy"
-          />
-        )}
+      <div className="image-container">
+        <div className="image-4x3">
+          {item.cover.data && (
+            <Image
+              alt={item.title}
+              src={url}
+              draggable={false}
+              placeholder="blur"
+              blurDataURL={shimmerBlur(500, 375)}
+              layout="fill"
+              objectFit="cover"
+              loading="lazy"
+            />
+          )}
+        </div>
       </div>
       <div className="content">
         <h5 className="text-primary-500 uppercase">

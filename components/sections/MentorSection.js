@@ -5,12 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Grid, Pagination } from "swiper";
 import MentorItem from "../items/MentorItem";
 
-import useMobileDetect from "../../helper/useMobileDetect";
-
 const MentorSection = ({ data }) => {
   const { title, description, mentors } = data;
-
-  const { isMobile } = useMobileDetect();
 
   return (
     <section id="mentors" className="bg-surface">
@@ -22,7 +18,7 @@ const MentorSection = ({ data }) => {
           </div>
 
           <Swiper
-            slidesPerView={isMobile() ? 1 : 2}
+            slidesPerView={1}
             grid={{
               rows: 1,
             }}
@@ -33,6 +29,11 @@ const MentorSection = ({ data }) => {
             navigation={true}
             modules={[Grid, Pagination, Navigation]}
             className="custom-swiper"
+            breakpoints={{
+              1024: {
+                slidesPerView: 2,
+              },
+            }}
           >
             {mentors.map((mentor) => (
               <SwiperSlide key={mentor.title}>

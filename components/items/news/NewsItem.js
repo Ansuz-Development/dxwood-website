@@ -11,7 +11,7 @@ const NewsItem = ({ item }) => {
 
   return (
     <div className="news-item">
-      <div className="image">
+      <div className="image-4x3">
         {coverUrl && (
           <Image
             alt={title}

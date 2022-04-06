@@ -4,11 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
 
 import CompanyItem, { CompanyItemProps } from "../items/CompanyItem";
-import useMobileDetect from "../../helper/useMobileDetect";
 
 const CompanySection = ({ data }) => {
   const { title, description, companies } = data;
-  const { isMobile } = useMobileDetect();
 
   return (
     <section id="companies">
@@ -19,7 +17,7 @@ const CompanySection = ({ data }) => {
             {description && <p>{description}</p>}
           </div>
           <Swiper
-            slidesPerView={isMobile() ? 1 : 4}
+            slidesPerView={1}
             spaceBetween={24}
             navigation={true}
             loop={true}
@@ -32,6 +30,17 @@ const CompanySection = ({ data }) => {
             }}
             modules={[Autoplay, Pagination, Navigation]}
             className="custom-swiper"
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+              1248: {
+                slidesPerView: 4,
+              },
+            }}
           >
             {companies.map((company, index) => (
               <SwiperSlide key={index}>

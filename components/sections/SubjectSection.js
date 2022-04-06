@@ -21,14 +21,19 @@ const SubjectSection = ({ data }) => {
             {description && <p>{description}</p>}
           </div>
           <Swiper
-            slidesPerView="auto"
+            slidesPerView={1}
             spaceBetween={24}
             modules={[Pagination, Navigation]}
             pagination={{
               clickable: true,
             }}
             navigation={true}
-            className={"custom-swiper"}
+            className="custom-swiper"
+            breakpoints={{
+              1024: {
+                slidesPerView: 1.1,
+              },
+            }}
           >
             {subjects.map((subject) => (
               <SwiperSlide key={subject.title}>

@@ -4,12 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 
 import NewsItem from "../items/news/NewsItem";
-import useMobileDetect from "../../helper/useMobileDetect";
 
 const EventSection = ({ data }) => {
   const { title, description, posts } = data;
-
-  const { isMobile } = useMobileDetect();
 
   return (
     <section id="news" className="bg-surface">
@@ -20,7 +17,7 @@ const EventSection = ({ data }) => {
             {description && <p>{description}</p>}
           </div>
           <Swiper
-            slidesPerView={isMobile() ? 1 : 3}
+            slidesPerView={1}
             spaceBetween={24}
             navigation={true}
             pagination={{
@@ -28,6 +25,14 @@ const EventSection = ({ data }) => {
             }}
             modules={[Pagination, Navigation]}
             className="custom-swiper"
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
           >
             {posts.map((post) => (
               <SwiperSlide key={post.id}>

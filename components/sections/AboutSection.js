@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Image from "next/image";
-import { getImageUrl, getFormattedImage, shimmerBlur } from "../../helper/utils";
+import { getImageUrl, shimmerBlur } from "../../helper/utils";
 import TimelineItem from "../items/TimelineItem";
 
 const AboutSection = ({ data }) => {
