@@ -54,6 +54,7 @@ module.exports = {
       outline: "#E5E5E6",
       divider: "#DADADA",
       error: "#B3261E",
+      transparent: "#FFFFFF00",
     },
     extend: {
       spacing: {
@@ -68,7 +69,6 @@ module.exports = {
       maxWidth: {
         "2/3": "66.77%",
         "5/12": "41.67%",
-        500: "500px",
       },
       minHeight: {
         375: "375px",

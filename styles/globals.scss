@@ -135,19 +135,6 @@ section {
   }
 }
 
-.navbar-item {
-  @apply relative body-1 cursor-pointer hover:text-primary-500;
-
-  &.active {
-    @apply text-primary-500;
-
-    &::after {
-      content: " ";
-      @apply absolute left-0 -bottom-2 h-0.5 w-full bg-primary-500;
-    }
-  }
-}
-
 .benefit-item {
   @apply flex flex-col items-center text-center h-full p-6 space-y-4 bg-white rounded-sm shadow md:shadow-none hover:shadow;
 }
@@ -251,6 +238,30 @@ section {
 
     .content {
       @apply bg-white bg-opacity-90 px-4 py-2 shadow w-full md:w-halfless22;
+    }
+  }
+}
+
+.navbar-container {
+  @apply sticky top-0 z-50  bg-white h-20;
+
+  .navbar {
+    @apply absolute top-20 right-0 space-y-8 w-1/2 sm:w-1/3 bg-white p-8 shadow;
+    @apply md:flex md:space-y-0 md:w-auto md:space-x-6 md:p-0 md:shadow-none;
+    @apply md:relative md:top-0 md:left-0;
+    @apply lg:px-2;
+
+    .navbar-item {
+      @apply relative body-1 cursor-pointer hover:text-primary-500;
+
+      &.active {
+        @apply text-primary-500;
+
+        &::after {
+          content: " ";
+          @apply absolute left-0 -bottom-2 h-0.5 w-full bg-primary-500;
+        }
+      }
     }
   }
 }
