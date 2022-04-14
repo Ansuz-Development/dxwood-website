@@ -5,8 +5,6 @@ import { useRouter } from "next/router";
 import NextLink from "next/link";
 import Image from "next/image";
 
-import useMobileDetect from "../../helper/useMobileDetect";
-
 import logos from "../../assests/dxwood-logo.jpg";
 
 const menuList = [
@@ -21,7 +19,6 @@ const menuList = [
 const Navbar = () => {
   const router = useRouter();
 
-  const { isMobile } = useMobileDetect();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -39,7 +36,7 @@ const Navbar = () => {
           <div className="shrink-0 md:hidden lg:block w-2/3 lg:w-1/4 xl:w-1/3 ">
             <Image src={logos} alt="DXWood" priority={true} placeholder="blur" />
           </div>
-          <ul className={`${isMobile() && isMenuOpen ? "" : "hidden"} navbar`}>
+          <ul className={`${isMenuOpen ? "" : "hidden"} navbar`}>
             {menuList.map((item) => (
               <li key={item.id}>
                 {router.pathname === "/" ? (
