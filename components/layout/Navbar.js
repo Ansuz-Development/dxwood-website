@@ -33,7 +33,7 @@ const Navbar = () => {
     <div className="navbar-container">
       <nav className="container h-full">
         <div className="h-full flex items-center justify-between md:justify-center lg:justify-between">
-          <div className="shrink-0 md:hidden lg:block w-2/3 lg:w-1/4 xl:w-1/3 ">
+          <div className="image-container">
             <Image src={logos} alt="DXWood" priority={true} placeholder="blur" />
           </div>
           <ul className={`${isMenuOpen ? "" : "hidden"} navbar`}>

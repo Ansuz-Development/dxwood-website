@@ -264,4 +264,9 @@ section {
       }
     }
   }
+
+  .image-container {
+    @apply justify-center  w-2/3 lg:max-w-1/4;
+    @apply md:hidden lg:flex;
+  }
 }
