@@ -15,7 +15,10 @@ export const getFormattedImage = (obj, type, withDomain = true) => {
 };
 
 export const fixContent = (content) => {
-  return content.replace('src="/uploads', `src="${process.env.NEXT_PUBLIC_STRAPI_API_URL}/uploads`);
+  return content.replaceAll(
+    'src="/uploads',
+    `src="${process.env.NEXT_PUBLIC_STRAPI_API_URL}/uploads`,
+  );
 };
 
 const shimmer = (w, h) => `

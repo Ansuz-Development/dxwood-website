@@ -47,10 +47,14 @@ const MentorSection = ({ data }) => {
   );
 };
 
+MentorSection.defaultProps = {
+  description: "",
+};
+
 MentorSection.propTypes = {
   data: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    description: PropTypes.string,
     mentors: PropTypes.array.isRequired,
   }),
 };
