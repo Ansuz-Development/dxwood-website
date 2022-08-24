@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import NextLink from "next/link";
 import Image from "next/image";
 
-import logos from "../../assests/dxwood-logo.jpg";
+import logos from "../../assests/dxwood-logo.png";
 
 const menuList = [
   { id: "home", label: "Trang chủ" },

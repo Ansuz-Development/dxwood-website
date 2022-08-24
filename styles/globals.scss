@@ -248,8 +248,12 @@ section {
 
   .navbar {
     @apply absolute top-20 right-0 space-y-8 w-1/2 sm:w-1/3 bg-white p-8 shadow;
-    @apply md:flex md:space-y-0 md:w-auto md:space-x-6 md:p-0 md:shadow-none;
-    @apply md:relative md:top-0 md:left-0;
+    @apply sm:flex sm:space-y-0 sm:w-auto space-x-0 lg:space-x-6 sm:p-0 sm:shadow-none;
+    @apply sm:relative sm:top-0 sm:left-0;
+
+    @apply md:hidden;
+    @apply tablet:flex tablet:space-y-0 tablet:w-auto space-x-0 lg:space-x-6 tablet:p-0 tablet:shadow-none;
+    @apply tablet:relative tablet:top-0 tablet:left-0;
 
     .navbar-item {
       @apply relative body-1 cursor-pointer hover:text-primary-500;
@@ -266,7 +270,8 @@ section {
   }
 
   .image-container {
-    @apply justify-center  w-2/3 lg:max-w-1/4;
-    @apply md:hidden lg:flex;
+    @apply justify-center w-2/3 md:max-w-5/12 lg:max-w-1/4;
+    // @apply md:hidden lg:flex;
+    @apply md:flex;
   }
 }
