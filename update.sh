@@ -2,9 +2,9 @@
 
 git pull origin main
 
-yarn
+npm install
 
-yarn build
+npm run build
 
 APP="dxwood-website-5000"
 
