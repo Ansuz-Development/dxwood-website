@@ -32,9 +32,16 @@ const Navbar = () => {
   return (
     <div className="navbar-container">
       <nav className="container h-full">
-        <div className="h-full flex items-center justify-between md:justify-center lg:justify-between">
+        <div className="h-full flex items-center justify-between lg:justify-between">
           <div className="image-container">
-            <Image src={logos} alt="DXWood" priority={true} placeholder="blur" />
+            <Image
+              src={logos}
+              alt="DXWood"
+              priority={true}
+              placeholder="blur"
+              layout="fill"
+              objectFit="contain"
+            />
           </div>
           <ul className={`${isMenuOpen ? "" : "hidden"} navbar`}>
             {menuList.map((item) => (
@@ -61,7 +68,7 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               data-collapse-toggle="mobile-menu"
               type="button"
